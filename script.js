@@ -31,13 +31,11 @@ const weightInput = document.querySelector('.weight');
 const heightInput = document.querySelector('.height');
 const resultParagraph = document.querySelector('.result');
 
-calculateBtn.addEventListener('click', function () {
-    // متغییر وزن
-    // این متد رشته را به عدد تبدیل میکند
+calculateBtn.addEventListener('click', function() {
     const weight = parseFloat(weightInput.value);
     const height = parseFloat(heightInput.value);
-
-    if (height > 0) {
+    
+    if (!isNaN(weight) && !isNaN(height) && height > 0) {
         const bmi = weight / (height * height);
         resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
     } else {
@@ -47,8 +45,8 @@ calculateBtn.addEventListener('click', function () {
 
 const loading = document.querySelector('.loader');
 
-const loader = setTimeout(load, 5000);
+// const loader = setTimeout(load, 5000);
 
-function load() {
-    loading.style.display = "none"
-}
+// function load() {
+//     loading.style.display = "none"
+// }
