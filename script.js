@@ -22,3 +22,33 @@ function c() {
 function equal() {
     CalculationInput.display.value = eval(CalculationInput.display.value)
 }
+
+// ------------------------------------
+
+
+const calculateBtn = document.querySelector('.calculateBtn');
+const weightInput = document.querySelector('.weight');
+const heightInput = document.querySelector('.height');
+const resultParagraph = document.querySelector('.result');
+
+calculateBtn.addEventListener('click', function () {
+    // متغییر وزن
+    // این متد رشته را به عدد تبدیل میکند
+    const weight = parseFloat(weightInput.value);
+    const height = parseFloat(heightInput.value);
+
+    if (height > 0) {
+        const bmi = weight / (height * height);
+        resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
+    } else {
+        resultParagraph.textContent = "Please enter valid weight and height.";
+    }
+});
+
+const loading = document.querySelector('.loader');
+
+const loader = setTimeout(load, 5000);
+
+function load() {
+    loading.style.display = "none"
+}

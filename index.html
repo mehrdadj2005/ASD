@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    <span class="loader"></span>
+
     <header>
         <input type="button" value="asd">
         <input type="button" value="asd">
@@ -41,6 +44,42 @@
             <input type="button" value="=" onclick="equal()">
             <div style="clear: both;"></div>
         </form>
+
+
+        <form action="#" method="get" id="bmiForm">
+            <div id="kg">
+                <input type="number" class="weight" placeholder="kg" value="">
+            </div>
+            <div id="m">
+                <input type="number" class="height" placeholder="m" value="">
+            </div>
+            <div>
+                <!-- <input type="checkbox" value="Female" id="Female"> -->
+                <!-- <input type="checkbox" value="Male" id="Male"> -->
+
+                <!-- <div class="container"> -->
+                    <input type="checkbox" id="cbx1" style="display: none;">
+                    <label for="cbx1" class="check">
+                        Female
+                        <svg width="15px" height="15px" viewBox="0 0 18 18">
+                            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+                            <polyline points="1 9 7 14 15 4"></polyline>
+                        </svg>
+                    </label>
+                <!-- </div> -->
+                <input type="checkbox" id="cbx2" style="display: none;">
+                <label for="cbx2" class="check">
+                    Male
+                    <svg width="15px" height="15px" viewBox="0 0 18 18">
+                        <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+                        <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                </label>
+            </div>
+            <button class="calculateBtn">show result</button>
+            <div class="result"></div>
+        </form>
+
     </main>
 
     <script src="script.js"></script>
