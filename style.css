@@ -46,11 +46,11 @@ main img {
 }
 
 form {
-    background-color: #222;
+    background-color: #90c4d2;
     width: 25%;
     border-radius: 10px;
     margin: 10px auto;
-    display: none;
+    
     /* position: relative;
     top: 50%;
     left: 50%;
@@ -97,7 +97,7 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
-#bmiForm input{
+#bmiForm input[type="text"]{
     margin: 8px auto;
     width: calc(100% - 5%);
 }
@@ -105,6 +105,22 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 2px 8px 2px 8px;
 
 }
+#bmiForm  #femalelMale{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+.ageMore19,
+.leasThan19{
+  margin: 10px;
+}
+  
+.leasThan19 span,
+.ageMore19 span{
+ margin-right: 8px;
+}
+
 .result{
     color: #010101;
     font-size: 18px;
@@ -235,6 +251,42 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
   #cbx2:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  #cbx3:checked + .check svg {
+    stroke: var(--accent-color, #a3e583);
+  }
+  
+  #cbx3:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  #cbx3:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  #cbx4:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  #cbx4:checked + .check svg {
+    stroke: var(--accent-color, #a3e583);
+  }
+  
+  #cbx4:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  #cbx4:checked + .check svg polyline {
     stroke-dashoffset: 42;
     transition: all 0.2s linear;
     transition-delay: 0.15s;

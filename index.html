@@ -46,38 +46,98 @@
         </form>
 
 
-        <form action="#" method="get" id="bmiForm">
-            <div id="kg">
-                <input type="text" class="weight" placeholder="kg" value="">
+        <form name="good" method="get" id="bmiForm">
+            <div id="change">
+                <input  type="text" class="weight" placeholder="kg" value="" >
             </div>
-            <div id="m">
-                <input type="text" class="height" placeholder="m" value="">
+            <div id="changTO">
+                <input type="text" class="height" placeholder="cm" value="">
             </div>
-            <div>
-                <!-- <input type="checkbox" value="Female" id="Female"> -->
-                <!-- <input type="checkbox" value="Male" id="Male"> -->
-
-                <!-- <div class="container"> -->
-                    <input type="checkbox" id="cbx1" style="display: none;">
+            <div id="femalelMale">
+                <div class="female">
+                    <span>زن</span>
+                    <input  name="good" type="radio" id="cbx1" style="display: none;">
                     <label for="cbx1" class="check">
-                        Female
+
                         <svg width="15px" height="15px" viewBox="0 0 18 18">
-                            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+                            <path
+                                d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                            </path>
                             <polyline points="1 9 7 14 15 4"></polyline>
                         </svg>
                     </label>
+                </div>
+
                 <!-- </div> -->
-                <input type="checkbox" id="cbx2" style="display: none;">
-                <label for="cbx2" class="check">
-                    Male
+                <div class="male">
+                    <span>مرد</span>
+                    <input name="good" type="radio" id="cbx2" style="display: none;">
+                    <label for="cbx2" class="check">
+
+                        <svg width="15px" height="15px" viewBox="0 0 18 18">
+                            <path
+                                d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                            </path>
+                            <polyline points="1 9 7 14 15 4"></polyline>
+                        </svg>
+                    </label>
+                </div>
+
+            </div>
+            <div class="ageMore19">
+                <span>سن 19 سال یا بالاتر</span>
+                <input name="bad" type="radio" id="cbx3" style="display: none;">
+                <label for="cbx3" class="check">
+
                     <svg width="15px" height="15px" viewBox="0 0 18 18">
-                        <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+                        <path
+                            d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                        </path>
                         <polyline points="1 9 7 14 15 4"></polyline>
                     </svg>
                 </label>
             </div>
-            <button class="calculateBtn">show result</button>
+            <div class="leasThan19">
+                <span>سن 19 سال به پایین</span>
+                <input name="bad" type="radio" id="cbx4" style="display: none;">
+                <label for="cbx4" class="check">
+                    <svg width="15px" height="15px" viewBox="0 0 18 18">
+                        <path
+                            d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                        </path>
+                        <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                </label>
+            </div>
+            <input type="button" value="✔" class="calculateBtn">
+
+
+            <!-- <button class="calculateBtn">show result</button> -->
             <div class="result"></div>
+            <div class="user"></div>
+        </form>
+
+        <!-- تبدیل واحد!!!!!!!!!!!!!!!!!!!! -->
+        <form name="good" id="good">
+            <h1>واحد طول تبدیل کننده</h1>
+            <label for="unit01">مقدار:</label>
+            <select name="unit01" id="unit01">
+                <option value="kilometer">کیلومتر</option>
+                <option value="meter">متر</option>
+                <option value="cm">سانتی متر</option>
+            </select>
+            <input type="number" id="unit">
+
+            <label for="unit02">تبدیل به:</label>
+            <select name="unit02" id="unit02">
+                <option value="kilometer02">کیلومتر</option>
+                <option value="meter02">متر</option>
+                <option value="cm02">سانتی متر</option>
+            </select>
+
+            <input type="submit" name="good" value="محاسبه">
+
+            <div class="leaghnt"></div>
         </form>
 
     </main>
