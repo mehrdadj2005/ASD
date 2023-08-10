@@ -1,294 +1,313 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 body,
 html {
-    height: 100%;
-    background-color: rgb(0, 166, 255)
+  height: 100%;
+  background-color: rgb(0, 166, 255)
 }
+
 header {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-    height: 7vh;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  height: 7vh;
 }
 
 header input {
-    width: calc(100% / 4 - 40px);
-    height: 5vh;
-    border: 3px solid red;
-    border-radius: 5px;
-    background-color: orange;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: calc(100% / 4 - 40px);
+  height: 5vh;
+  border: 3px solid red;
+  border-radius: 5px;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
-    width: 60%;
-    margin: 5% auto;
+  width: 60%;
+  margin: 5% auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main img {
-    width: 45%;
-    height: 70vh;
-    background-color: red;
-    /* /\/\/\/\/\/\/\/\/\/\/\/ */
-    display: none;
-    /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  width: 45%;
+  height: 70vh;
+  background-color: red;
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  /* display: none; */
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
 }
 
-form {
-    background-color: #90c4d2;
-    width: 25%;
-    border-radius: 10px;
-    margin: 10px auto;
-    
-    /* position: relative;
+form[name="clac"] {
+  background-color: #222;
+  width: 25%;
+  border-radius: 10px;
+  margin: 10px auto;
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  /* display: none; */
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  /* position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
 }
 
 form input[name="display"] {
-    background-color: #ddd;
-    height: 40px;
-    text-align: right;
-    border-radius: 8px;
-    margin: 5px;
-    width: calc(100% - 30px);
-    border: none;
-    padding: 0 10px;
+  background-color: #ddd;
+  height: 40px;
+  text-align: right;
+  border-radius: 8px;
+  margin: 5px;
+  width: calc(100% - 30px);
+  border: none;
+  padding: 0 10px;
 }
 
 form input[type="button"] {
-    float: left;
-    width: calc(100% / 4 - 6.5px);
-    background-color: white;
-    border-radius: 8px;
-    height: 36px;
-    text-align: center;
-    margin: 0 0 5px 5px;
+  float: left;
+  width: calc(100% / 4 - 6.5px);
+  background-color: white;
+  border-radius: 8px;
+  height: 36px;
+  text-align: center;
+  margin: 0 0 5px 5px;
 }
 
 form input[type="button"]:nth-last-of-type(1) {
-    background-color: yellow;
-    width: calc(50% - 7px);
+  background-color: yellow;
+  width: calc(50% - 7px);
 }
 
 
 /* -----------bmi section------------------------ */
-#bmiForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   /* From https://css.glass */
-background: rgba(255, 255, 255, 0.84);
-border-radius: 6px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-}
-#bmiForm input[type="text"]{
-    margin: 8px auto;
-    width: calc(100% - 5%);
-}
-#bmiForm button{
-    padding: 2px 8px 2px 8px;
-
-}
-#bmiForm  #femalelMale{
-  width: 100%;
+#bmiForm {
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
-}
-.ageMore19,
-.leasThan19{
-  margin: 10px;
-}
-  
-.leasThan19 span,
-.ageMore19 span{
- margin-right: 8px;
+  flex-direction: column;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  /* display: none; */
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+
 }
 
-.result{
-    color: #010101;
-    font-size: 18px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5px;
+#bmiForm input {
+  margin: 8px auto;
+  width: calc(100% - 5%);
+}
+
+#bmiForm button {
+  padding: 2px 8px 2px 8px;
+
+}
+
+.result {
+  color: #010101;
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+
+
 }
 
 /* loading------------ */
 .loader {
-    width: 48px;
-    height: 48px;
-    display: inline-block;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .loader::after,
-  .loader::before {
-    content: '';  
-    box-sizing: border-box;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-    position: absolute;
-    left: 0;
-    top: 0;
-    animation: animloader 2s linear infinite;
-  }
-  .loader::after {
-    animation-delay: 1s;
-  }
-  
-  @keyframes animloader {
-    0% {
-      transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0;
-    }
-  }
-      
-      /* loading end------------ */
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+  display: none;
+  /* /\/\/\/\/\/\/\/\/\/\/\/ */
+}
 
-      /* checkBox...................... */
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* loading end------------ */
+
+/* checkBox...................... */
 
 
 .check {
-    cursor: pointer;
-    position: relative;
-    margin: auto;
-    width: 18px;
-    height: 18px;
-    -webkit-tap-highlight-color: transparent;
-    transform: translate3d(0, 0, 0);
-    
-  }
-  
-  .check:before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(34, 50, 84, 0.03);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-  
-  .check svg {
-    position: relative;
-    z-index: 1;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #c8ccd4;
-    stroke-width: 1.5;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.2s ease;
-  }
-  
-  .check svg path {
-    stroke-dasharray: 60;
-    stroke-dashoffset: 0;
-  }
-  
-  .check svg polyline {
-    stroke-dasharray: 22;
-    stroke-dashoffset: 66;
-  }
-  
-  .check:hover:before {
-    opacity: 1;
-  }
-  
-  .check:hover svg {
-    stroke: var(--accent-color, #a3e583);
-  }
-  
-  #cbx1:checked + .check svg {
-    stroke: var(--accent-color, #a3e583);
-  }
-  
-  #cbx1:checked + .check svg path {
-    stroke-dashoffset: 60;
-    transition: all 0.3s linear;
-  }
-  
-  #cbx1:checked + .check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-  }
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
 
-  #cbx2:checked + .check svg {
-    stroke: var(--accent-color, #a3e583);
-  }
-  
-  #cbx2:checked + .check svg path {
-    stroke-dashoffset: 60;
-    transition: all 0.3s linear;
-  }
-  
-  #cbx2:checked + .check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-  }
+}
 
-  #cbx3:checked + .check svg {
-    stroke: var(--accent-color, #a3e583);
-  }
-  
-  #cbx3:checked + .check svg path {
-    stroke-dashoffset: 60;
-    transition: all 0.3s linear;
-  }
-  
-  #cbx3:checked + .check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-  }
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 
-  #cbx4:checked + .check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-  }
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #c8ccd4;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
 
-  #cbx4:checked + .check svg {
-    stroke: var(--accent-color, #a3e583);
-  }
-  
-  #cbx4:checked + .check svg path {
-    stroke-dashoffset: 60;
-    transition: all 0.3s linear;
-  }
-  
-  #cbx4:checked + .check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-  }
-  /* checkbox end......................... */
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.check:hover:before {
+  opacity: 1;
+}
+
+.check:hover svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx1:checked+.check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx1:checked+.check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx1:checked+.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+#cbx2:checked+.check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx2:checked+.check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx2:checked+.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+#cbx3:checked+.check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx3:checked+.check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx3:checked+.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
+#cbx4:checked+.check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx4:checked+.check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx4:checked+.check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+/* checkbox end......................... */
+
+li {
+  list-style: none;
+}
+
+#unitConversion>div {
+  display: flex;
+}
+
+#unitConversion ul {
+  margin-left: 5px;
+}
+
+#unitConversion ul ul {
+  position: absolute;
+  display: none;
+}
+
+#unitConversion ul>li:hover ul {
+  display: block;
+}

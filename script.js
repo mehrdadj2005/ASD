@@ -36,18 +36,6 @@ const manGender = document.querySelector('.male > input')
 const mare19Age = document.querySelector('.ageMore19>input')
 const leasThan19 = document.querySelector('.leasThan19>input')
 
-// window.addEventListener("click", (e) => {
-//     if (e.target=mare19Age) {
-//         console.log('woman gender');
-//         leasThan19.disabled=true
-//         // womanGender.disabled=false
-//     }
-//     if (e.target=leasThan19){
-//        console.log('man gender');
-//        mare19Age.disabled=true
-//     }
-
-// })
 
 calculateBtn.addEventListener('click', function () {
     const weight = parseFloat(weightInput.value);
@@ -76,7 +64,7 @@ function satuse(userStatus) {
     } else if (userStatus <= 39.9) {
         user = "بسیار چاق"
     } else if (userStatus >= 40) {
-        user = "چاقی شدید لطفا در اولین فرصت به فکر کاهش وزن خود باشید"
+        user = "چاق شدید لطفا در اولین فرصت به فکر کاهش وزن خود باشید"
     }
     return user
 }
@@ -168,3 +156,68 @@ const loading = document.querySelector('.loader');
 // function load() {
 //     loading.style.display = "none"
 // }
+
+let Second = document.querySelector('#Second')
+let minutes = document.querySelector('#minutes')
+let hour = document.querySelector('#hour')
+let unitConversion = document.querySelector('#unitConversion')
+let UnitList = document.querySelector('#unitConversion ul > li ul')
+let unit = document.querySelector('#unit')
+
+UnitList.addEventListener('click', unitChanger)
+unitConversion.addEventListener('submit', www)
+
+function unitChanger(e) {
+    let unitValue = e.target.textContent
+    unit.innerHTML = unitValue
+}
+
+function www(e) {
+    let unitValue = unit.textContent
+    let valueinput = Second.value
+    if (unitValue == 'Second') {
+        let hour = (valueinput / 3600).toFixed()
+        let IntegerHour = (valueinput / 3600) - hour
+        let tensOfMinutes = (IntegerHour * 0.6).toFixed(2)[2];
+        let aFewMinutes = (IntegerHour * 0.6).toFixed(2)[3];
+        let khoroji = `${hour} : ${tensOfMinutes} ${aFewMinutes}`
+        // /\/\/\/\/\/\/\/\/\/\/\/\/\
+        let minutes = valueinput / 60
+        let IntegerMinutes = minutes.toFixed()
+        let decimalNumberSeconds = minutes - IntegerMinutes
+        let tensOfSeconds = (decimalNumberSeconds * 0.6).toFixed(2)[3];
+        let OneHundredSeconds = (decimalNumberSeconds * 0.6).toFixed(2)[4];
+        let khoroji2 = `${IntegerMinutes} : ${tensOfSeconds} ${OneHundredSeconds}`
+        aaa(khoroji, khoroji2)
+    } else if (unitValue == 'minutes') {
+        let hour = (valueinput / 60)
+        let IntegerHour = (valueinput / 60) - hour.toFixed()
+        console.log(IntegerHour * 0.6);
+        let tensOfMinutes = (IntegerHour * 0.6).toFixed(2)[3];
+        let aFewMinutes = (IntegerHour * 0.6).toFixed(2)[4];
+        let khoroji = `${hour} : ${tensOfMinutes} ${aFewMinutes}`
+        // /\/\/\/\/\/\/\/\//\/\/\/\/\/\/
+        let Second = (valueinput * 60).toFixed()
+        let decimalNumberSecond = (valueinput * 60) - Second
+        let tensOfSeconds = (decimalNumberSecond * 0.6).toFixed(2)[2];
+        let aUnitOfOneSecond = (decimalNumberSecond * 0.6).toFixed(2)[3];
+        let khoroji2 = `${Second} : ${tensOfSeconds} ${aUnitOfOneSecond}`
+        bbb(khoroji, khoroji2)
+    } else if (unitValue == 'hour') {
+        let hour = (valueinput * 60)
+        // /\/\/\/\/\/\/\/\/\/\/\/\/\/\
+        let Second = (valueinput * 3600)
+        ccc(hour, Second)
+    }
+    e.preventDefault()
+}
+
+function aaa(x, y) {
+    console.log(x,'=>', y);
+}
+function bbb(x, y) {
+    console.log(x,'=>', y);
+}
+function ccc(x, y) {
+    console.log(x,'=>', y);
+}
