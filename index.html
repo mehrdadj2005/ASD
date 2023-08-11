@@ -10,28 +10,18 @@
 </head>
 
 <body>
-    <!-- loading start>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <div class="loaderDiv">
         <span class="loader"></span>
     </div>
-    <!-- loading end<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-    <!-- header start>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <header>
-        <input type="button" value="asd">
-        <input type="button" value="asd">
-        <input type="button" value="asd">
-        <input type="button" value="asd">
+        <input type="button" value="CALCULATOR" id="calculator">
+        <input type="button" value="MBI" id="mbi">
+        <input type="button" value="CONVERT LENGTH UNITS" id="ConvertLengthUnits">
+        <input type="button" value="CONVERT TIME UNIT" id="ConvertTimeUnits">
     </header>
-    <!-- header end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-    <!-- main start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-    <main>
-        <!-- div left start>>>>>>>>>>>>>>>>>>>>>>>> -->
-        <img src="" alt="">
-        <!-- div left end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-        
-        <!-- div right start>>>>>>>>>>>>>>>>>>>>>>>> -->
 
-            <!-- calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <main>
+        <img src="" alt="">
         <form name="clac" id="clac">
             <input type="text" disabled value="" name="display">
             <input type="button" value="AC" onclick="as()">
@@ -55,9 +45,6 @@
             <input type="button" value="=" onclick="equal()">
             <div style="clear: both;"></div>
         </form>
-            <!-- calcul;ator end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-
-            <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
         <form name="good" method="get" id="bmiForm">
             <div id="change">
                 <input type="text" class="weight" placeholder="kg" value="">
@@ -123,13 +110,9 @@
             <input type="button" value="✔" class="calculateBtn">
 
 
-            <!-- <button class="calculateBtn">show result</button> -->
             <div class="result"></div>
             <div class="user"></div>
         </form>
-            <!-- BMI calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-
-            <!-- unit conversion calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
         <form name="good" id="unitForm">
             <h1>واحد طول تبدیل کننده</h1>
             <label for="unit01">مقدار:</label>
@@ -151,43 +134,36 @@
 
             <div class="leaghnt"></div>
         </form>
-            <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-
-            <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
-            <form name="unitConversion" id="unitConversion">
-                <div>
-                    <input type="submit" name="unitConversion" value="asd">
-                    <input type="text" id="Second" value="">
-                    <ul id="ul1">
-                        <li>
-                            <span id="unit1">asdasd</span>
-                            <!-- <span>مقدار :</span> -->
-                            <ul>
-                                <li>Second</li>
-                                <li>minutes</li>
-                                <li>hour</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul id="ul2">
-                        <li>
-                            <span id="unit2">asdasd</span>
-                            <span>مقدار :</span>
-                            <ul>
-                                <li>Second</li>
-                                <li>minutes</li>
-                                <li>hour</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="khorji"></div>
-            </form>
-            <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-
-        <!-- div right end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <form name="unitConversion" id="unitConversion">
+            <div>
+                <input type="submit" name="unitConversion" value="asd">
+                <input type="text" id="Second" value="">
+                <ul id="ul1">
+                    <li>
+                        <span id="unit1">asdasd</span>
+                        <span>مقدار :</span>
+                        <ul>
+                            <li>Second</li>
+                            <li>minutes</li>
+                            <li>hour</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="ul2">
+                    <li>
+                        <span id="unit2">asdasd</span>
+                        <span>تبدیل به :</span>
+                        <ul>
+                            <li>Second</li>
+                            <li>minutes</li>
+                            <li>hour</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="khorji"></div>
+        </form>
     </main>
-    <!-- main end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
     <script src="script.js"></script>
 </body>

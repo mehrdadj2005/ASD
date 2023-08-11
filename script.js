@@ -1,16 +1,54 @@
 // انتظار برای لودینگ به مدت 5 ثانیه
-setTimeout(function() {
+setTimeout(function () {
     // مخفی کردن لودینگ و نمایش محتوای صفحه
     const loaderDiv = document.querySelector('.loaderDiv');
-    const main=document.querySelector('main');
+    const main = document.querySelector('main');
     const header = document.querySelector('header');
 
     loaderDiv.style.display = 'none';
     header.style.display = 'flex';
-    main.style.display="flex";
+    main.style.display = "flex";
 }, 3000);
 
+// \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+let calculatorHeader = document.querySelector('#calculator').addEventListener('click', calculator)
+let mbiHeader = document.querySelector('#mbi').addEventListener('click', mbi)
+let ConvertLengthUnitsHeader = document.querySelector('#ConvertLengthUnits').addEventListener('click', ConvertLengthUnits)
+let ConvertTimeUnitsHeader = document.querySelector('#ConvertTimeUnits').addEventListener('click', ConvertTimeUnits)
 
+function calculator() {
+    let x = document.querySelector('#clac')
+    for (let i = 0; i < 4; i++) {
+        let y = document.querySelectorAll('body main  form')[i]
+        y.style='display:none;'
+    }
+    x.style='display:inline-block;'
+}
+function mbi() {
+    let x = document.querySelector('#bmiForm')
+    for (let i = 0; i < 4; i++) {
+        let y = document.querySelectorAll('body main  form')[i]
+        y.style='display:none;'
+    }
+    x.style='display:flex;'
+}
+function ConvertLengthUnits() {
+    let x = document.querySelector('#unitForm')
+    for (let i = 0; i < 4; i++) {
+        let y = document.querySelectorAll('body main  form')[i]
+        y.style='display:none;'
+    }
+    x.style='display:inline-block;'
+}
+function ConvertTimeUnits() {
+    let x = document.querySelector('#unitConversion')
+    for (let i = 0; i < 4; i++) {
+        let y = document.querySelectorAll('body main  form')[i]
+        y.style='display:none;'
+    }
+    x.style='display:inline-block;'
+}
+// /\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 // سلکت کردن اینپوت نمایش اعداد
 let CalculationInput = document.querySelector('#clac')
 
@@ -54,8 +92,8 @@ calculateBtn.addEventListener('click', function () {
     // مقدار را از اینپوت با تایپ عدد میگیرد
     const weight = parseFloat(weightInput.value);
     const height = parseFloat(heightInput.value);
-// شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
-// اگر هم یکی از اینپوت ها خالی باشند ارور میده
+    // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
+    // اگر هم یکی از اینپوت ها خالی باشند ارور میده
     if (!isNaN(weight) && !isNaN(height) && height > 0) {
         // فرموا محاسبه شاخص توده بدنی
         // وزن بر واحد کیلو گرم
@@ -91,9 +129,9 @@ function satuse(userStatus) {
 
 // ------------------تبدیل واحد----------------------
 const leanght = document.querySelector(".leaghnt")
-const unitForm=document.querySelector("#unitForm")
+const unitForm = document.querySelector("#unitForm")
 // فرم که سابمیت شد محسبه را شروع میکند
-unitForm.addEventListener("submit",convertToMeters)
+unitForm.addEventListener("submit", convertToMeters)
 // فانکشن برای محاسبه
 function convertToMeters(e) {
     // مقدار داخل اینپوت را به عدد میگیرد
@@ -104,41 +142,41 @@ function convertToMeters(e) {
     console.log(unit01);
     const unit02 = document.querySelector('#unit02').value
     // اگر مقداری که میخوایم تبدیل کنیم کیلوگرم باشه 
-    if (unit01=="kilometer") {
+    if (unit01 == "kilometer") {
         // تگر مقداری که میخوایم تبدیل بشه متر باشه
-        if (unit02=="meter02") {
-            leanght.textContent=kmToMeter()
+        if (unit02 == "meter02") {
+            leanght.textContent = kmToMeter()
             // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
-        }else if (unit02=="cm02") {
+        } else if (unit02 == "cm02") {
             console.log("km to cm");
-            leanght.innerHTML= kmToCm()
+            leanght.innerHTML = kmToCm()
             // کیلو متر
-        }else if (unit02=="kilometer02"){
-            leanght.textContent= unit
+        } else if (unit02 == "kilometer02") {
+            leanght.textContent = unit
         }
         // اگر مقداری که میخوایم تبدیل کنیم متر باشه 
-    }else if (unit01=="meter") {
+    } else if (unit01 == "meter") {
         // تگر مقداری که میخوایم تبدیل بشه متر باشه
-        if (unit02=="meter02") {
-            leanght.textContent=unit
+        if (unit02 == "meter02") {
+            leanght.textContent = unit
             // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
-        }else if (unit02=="cm02") {
-            leanght.textContent= mToCm()
+        } else if (unit02 == "cm02") {
+            leanght.textContent = mToCm()
             // تگر مقداری که میخوایم تبدیل بشه کیلو متر باشه
-        }else if (unit02=="kilometer02"){
-            leanght.textContent= mToKm()
+        } else if (unit02 == "kilometer02") {
+            leanght.textContent = mToKm()
         }
         // اگر مقداری که میخوایم تبدیل کنیم سانتی متر باشه 
-    }else if (unit01=="cm") {
+    } else if (unit01 == "cm") {
         // تگر مقداری که میخوایم تبدیل بشه متر باشه
-        if (unit02=="meter02") {
-            leanght.textContent=cmToMeter()
+        if (unit02 == "meter02") {
+            leanght.textContent = cmToMeter()
             // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
-        }else if (unit02=="cm02") {
-            leanght.textContent= unit
+        } else if (unit02 == "cm02") {
+            leanght.textContent = unit
             // تگر مقداری که میخوایم تبدیل بشه کیلو متر باشه
-        }else if (unit02=="kilometer02"){
-            leanght.textContent= cmToKilometer()
+        } else if (unit02 == "kilometer02") {
+            leanght.textContent = cmToKilometer()
         }
     }
     // برای اینکخ بعد از سابمیت شدن  صفحه رفرش نشه
@@ -154,31 +192,31 @@ function kmToMeter(e) {
 // فانکشن تبدیل کیلو گرم به سانتی متر
 function kmToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
-    let cm = unit * 100000 ;
+    let cm = unit * 100000;
     return cm
 }
 // فانکشن تبدیل  متر به سانتی متر
 function mToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
-    let cm = unit * 100 ;
+    let cm = unit * 100;
     return cm
 }
 // فانکشن تبدیل  متر به کیلو متر
 function mToKm() {
     let unit = parseFloat(document.getElementById("unit").value);
-    let km = unit / 1000 ;
+    let km = unit / 1000;
     return km
 }
 //  فانکشن تبدیل  سانتی متر به متر
 function cmToMeter() {
     let unit = parseFloat(document.getElementById("unit").value);
-    let meter = unit / 100 ;
+    let meter = unit / 100;
     return meter
 }
 //  فانکشن تبدیل  سانتی متر به کیلو متر
 function cmToKilometer() {
     let unit = parseFloat(document.getElementById("unit").value);
-    let km = unit * 1000000 ;
+    let km = unit * 1000000;
     return km
 }
 
@@ -240,6 +278,7 @@ function www(e) {
     e.preventDefault()
 }
 
+//  فانکشن تبدیل ثانیه به دقیقه
 function sToM() {
     let unit = Second.value;
     if (unit < 60) {
@@ -252,6 +291,8 @@ function sToM() {
         return `${a.toFixed()} : ${c}${d}`
     }
 }
+
+//  فانکشن تبدیل ثانیه به ساعت
 function sToH() {
     let unit = Second.value;
     if (unit < 3600) {
@@ -264,11 +305,15 @@ function sToH() {
         return `${a.toFixed()} : ${c}${d}`
     }
 }
+
+//  فانکشن تبدیل دقیقه به ثانیه
 function mToS() {
     let unit = Second.value;
     let a = unit * 60
     return a.toFixed()
 }
+
+//  فانکشن تبدیل دقیقه به ساعت
 function mToH() {
     let unit = Second.value;
     if (unit < 60) {
@@ -281,11 +326,15 @@ function mToH() {
         return `${a.toFixed()} : ${c}${d}`
     }
 }
+
+//  فانکشن تبدیل ساعت به ثانیه
 function hTos() {
     let unit = Second.value;
     let a = unit * 3600 .toFixed()
     return a
 }
+
+//  فانکشن تبدیل ساعت به دقیقه
 function hToM() {
     let unit = Second.value;
     let a = unit * 60 .toFixed()
