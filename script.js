@@ -1,3 +1,16 @@
+// انتظار برای لودینگ به مدت 5 ثانیه
+setTimeout(function() {
+    // مخفی کردن لودینگ و نمایش محتوای صفحه
+    const loaderDiv = document.querySelector('.loaderDiv');
+    const main=document.querySelector('main');
+    const header = document.querySelector('header');
+
+    loaderDiv.style.display = 'none';
+    header.style.display = 'flex';
+    main.style.display="flex";
+}, 3000);
+
+
 // سلکت کردن اینپوت نمایش اعداد
 let CalculationInput = document.querySelector('#clac')
 
@@ -24,7 +37,7 @@ function equal() {
 }
 
 // ------------------------------------
-
+//  BMI calculation
 
 const calculateBtn = document.querySelector('.calculateBtn');
 const weightInput = document.querySelector('.weight');
@@ -36,12 +49,18 @@ const manGender = document.querySelector('.male > input')
 const mare19Age = document.querySelector('.ageMore19>input')
 const leasThan19 = document.querySelector('.leasThan19>input')
 
-
+// وقتی روه دکمه محاسبه کلیک میشه
 calculateBtn.addEventListener('click', function () {
+    // مقدار را از اینپوت با تایپ عدد میگیرد
     const weight = parseFloat(weightInput.value);
     const height = parseFloat(heightInput.value);
-
+// شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
+// اگر هم یکی از اینپوت ها خالی باشند ارور میده
     if (!isNaN(weight) && !isNaN(height) && height > 0) {
+        // فرموا محاسبه شاخص توده بدنی
+        // وزن بر واحد کیلو گرم
+        // قد بر واحد متر
+        // فرمول = وزن تقسیم بر قد به توان 2
         const bmi = weight / (height * height);
         resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
         user.textContent = `وضعیت:${satuse(bmi.toFixed(2))}`;
@@ -50,7 +69,7 @@ calculateBtn.addEventListener('click', function () {
     }
 });
 
-
+// این فانکشن برای این که وضعیت سلامتی فرد را مشخص کند
 function satuse(userStatus) {
     let user
     if (userStatus < 18.5) {
@@ -72,90 +91,98 @@ function satuse(userStatus) {
 
 // ------------------تبدیل واحد----------------------
 const leanght = document.querySelector(".leaghnt")
-const bad=document.querySelector("#good")
-bad.addEventListener("submit",convertToMeters)
-
+const unitForm=document.querySelector("#unitForm")
+// فرم که سابمیت شد محسبه را شروع میکند
+unitForm.addEventListener("submit",convertToMeters)
+// فانکشن برای محاسبه
 function convertToMeters(e) {
+    // مقدار داخل اینپوت را به عدد میگیرد
     let unit = parseFloat(document.getElementById("unit").value);
-
+    // متغییر برای پیدا کردن واحد مقداری که میخوایم تبدیل کنیم
     const unit01 = document.querySelector('#unit01').value;
+    // متغییر برای پیدا کردن واحد مقداری که میخوایم تبدیل بشه
     console.log(unit01);
     const unit02 = document.querySelector('#unit02').value
-    console.log(unit02);
+    // اگر مقداری که میخوایم تبدیل کنیم کیلوگرم باشه 
     if (unit01=="kilometer") {
+        // تگر مقداری که میخوایم تبدیل بشه متر باشه
         if (unit02=="meter02") {
-            console.log("m02 is supported");
             leanght.textContent=kmToMeter()
+            // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
         }else if (unit02=="cm02") {
             console.log("km to cm");
             leanght.innerHTML= kmToCm()
+            // کیلو متر
         }else if (unit02=="kilometer02"){
             leanght.textContent= unit
         }
+        // اگر مقداری که میخوایم تبدیل کنیم متر باشه 
     }else if (unit01=="meter") {
+        // تگر مقداری که میخوایم تبدیل بشه متر باشه
         if (unit02=="meter02") {
             leanght.textContent=unit
+            // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
         }else if (unit02=="cm02") {
             leanght.textContent= mToCm()
+            // تگر مقداری که میخوایم تبدیل بشه کیلو متر باشه
         }else if (unit02=="kilometer02"){
             leanght.textContent= mToKm()
         }
+        // اگر مقداری که میخوایم تبدیل کنیم سانتی متر باشه 
     }else if (unit01=="cm") {
+        // تگر مقداری که میخوایم تبدیل بشه متر باشه
         if (unit02=="meter02") {
             leanght.textContent=cmToMeter()
+            // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
         }else if (unit02=="cm02") {
             leanght.textContent= unit
+            // تگر مقداری که میخوایم تبدیل بشه کیلو متر باشه
         }else if (unit02=="kilometer02"){
             leanght.textContent= cmToKilometer()
         }
     }
-    // let kilometers = parseFloat(document.getElementById("kilometers").value);
-    // let meters = kilometers * 1000;
-
-    // leanght.textContent =`${kilometers}کیلومتر معادل ${meters}متر است`
+    // برای اینکخ بعد از سابمیت شدن  صفحه رفرش نشه
     e.preventDefault()
 }
-
+// فانکشن تبدیل کیلو گرم به متر
 function kmToMeter(e) {
-    // e.preventDefault()
 
     let unit = parseFloat(document.getElementById("unit").value);
     let meter = unit * 1000;
     return meter
 }
+// فانکشن تبدیل کیلو گرم به سانتی متر
 function kmToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100000 ;
     return cm
 }
+// فانکشن تبدیل  متر به سانتی متر
 function mToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100 ;
     return cm
 }
+// فانکشن تبدیل  متر به کیلو متر
 function mToKm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit / 1000 ;
     return km
 }
+//  فانکشن تبدیل  سانتی متر به متر
 function cmToMeter() {
     let unit = parseFloat(document.getElementById("unit").value);
     let meter = unit / 100 ;
     return meter
 }
+//  فانکشن تبدیل  سانتی متر به کیلو متر
 function cmToKilometer() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit * 1000000 ;
     return km
 }
 
-const loading = document.querySelector('.loader');
 
-// const loader = setTimeout(load, 5000);
-
-// function load() {
-//     loading.style.display = "none"
-// }
 
 let Second = document.querySelector('#Second')
 let minutes = document.querySelector('#minutes')
