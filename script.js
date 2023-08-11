@@ -183,68 +183,111 @@ function cmToKilometer() {
 }
 
 
-
 let Second = document.querySelector('#Second')
 let minutes = document.querySelector('#minutes')
 let hour = document.querySelector('#hour')
 let unitConversion = document.querySelector('#unitConversion')
-let UnitList = document.querySelector('#unitConversion ul > li ul')
-let unit = document.querySelector('#unit')
+let UnitList1 = document.querySelector('#ul1')
+let UnitList2 = document.querySelector('#ul2')
+let unit1 = document.querySelector('#unit1')
+let unit2 = document.querySelector('#unit2')
 
-UnitList.addEventListener('click', unitChanger)
+UnitList1.addEventListener('click', unitChanger1)
+UnitList2.addEventListener('click', unitChanger2)
 unitConversion.addEventListener('submit', www)
 
-function unitChanger(e) {
+function unitChanger1(e) {
     let unitValue = e.target.textContent
-    unit.innerHTML = unitValue
+    unit1.innerHTML = unitValue
+}
+
+function unitChanger2(e) {
+    let unitValue = e.target.textContent
+    unit2.innerHTML = unitValue
 }
 
 function www(e) {
-    let unitValue = unit.textContent
+    let khorji = document.querySelector('.khorji')
     let valueinput = Second.value
-    if (unitValue == 'Second') {
-        let hour = (valueinput / 3600).toFixed()
-        let IntegerHour = (valueinput / 3600) - hour
-        let tensOfMinutes = (IntegerHour * 0.6).toFixed(2)[2];
-        let aFewMinutes = (IntegerHour * 0.6).toFixed(2)[3];
-        let khoroji = `${hour} : ${tensOfMinutes} ${aFewMinutes}`
-        // /\/\/\/\/\/\/\/\/\/\/\/\/\
-        let minutes = valueinput / 60
-        let IntegerMinutes = minutes.toFixed()
-        let decimalNumberSeconds = minutes - IntegerMinutes
-        let tensOfSeconds = (decimalNumberSeconds * 0.6).toFixed(2)[3];
-        let OneHundredSeconds = (decimalNumberSeconds * 0.6).toFixed(2)[4];
-        let khoroji2 = `${IntegerMinutes} : ${tensOfSeconds} ${OneHundredSeconds}`
-        aaa(khoroji, khoroji2)
-    } else if (unitValue == 'minutes') {
-        let hour = (valueinput / 60)
-        let IntegerHour = (valueinput / 60) - hour.toFixed()
-        console.log(IntegerHour * 0.6);
-        let tensOfMinutes = (IntegerHour * 0.6).toFixed(2)[3];
-        let aFewMinutes = (IntegerHour * 0.6).toFixed(2)[4];
-        let khoroji = `${hour} : ${tensOfMinutes} ${aFewMinutes}`
-        // /\/\/\/\/\/\/\/\//\/\/\/\/\/\/
-        let Second = (valueinput * 60).toFixed()
-        let decimalNumberSecond = (valueinput * 60) - Second
-        let tensOfSeconds = (decimalNumberSecond * 0.6).toFixed(2)[2];
-        let aUnitOfOneSecond = (decimalNumberSecond * 0.6).toFixed(2)[3];
-        let khoroji2 = `${Second} : ${tensOfSeconds} ${aUnitOfOneSecond}`
-        bbb(khoroji, khoroji2)
-    } else if (unitValue == 'hour') {
-        let hour = (valueinput * 60)
-        // /\/\/\/\/\/\/\/\/\/\/\/\/\/\
-        let Second = (valueinput * 3600)
-        ccc(hour, Second)
+    const unit01 = unit1.textContent;
+    const unit02 = unit2.textContent;
+
+    if (unit01 == "Second") {
+        if (unit02 == "Second") {
+            khorji.textContent = valueinput
+        } else if (unit02 == "minutes") {
+            khorji.innerHTML = sToM()
+        } else if (unit02 == "hour") {
+            khorji.textContent = sToH()
+        }
+    } else if (unit01 == "minutes") {
+        if (unit02 == "Second") {
+            khorji.textContent = mToS()
+        } else if (unit02 == "minutes") {
+            khorji.textContent = valueinput
+        } else if (unit02 == "hour") {
+            khorji.textContent = mToH()
+        }
+    } else if (unit01 == "hour") {
+        if (unit02 == "Second") {
+            khorji.textContent = hTos()
+        } else if (unit02 == "minutes") {
+            khorji.textContent = hToM()
+        } else if (unit02 == "hour") {
+            khorji.textContent = valueinput
+        }
     }
     e.preventDefault()
 }
 
-function aaa(x, y) {
-    console.log(x,'=>', y);
+function sToM() {
+    let unit = Second.value;
+    if (unit < 60) {
+        return `زمان شما شامل 1 دقیقه نمی باشد`
+    } else {
+        let a = unit / 60
+        let b = a - a.toFixed()
+        let c = (b * 0.6).toFixed(2)[2]
+        let d = (b * 0.6).toFixed(2)[3]
+        return `${a.toFixed()} : ${c}${d}`
+    }
 }
-function bbb(x, y) {
-    console.log(x,'=>', y);
+function sToH() {
+    let unit = Second.value;
+    if (unit < 3600) {
+        return `زمان شما شامل 1 ساعت نمی باشد`
+    } else {
+        let a = unit / 3600;
+        let b = a - a.toFixed()
+        let c = (b * 0.6).toFixed(2)[3]
+        let d = (b * 0.6).toFixed(2)[4]
+        return `${a.toFixed()} : ${c}${d}`
+    }
 }
-function ccc(x, y) {
-    console.log(x,'=>', y);
+function mToS() {
+    let unit = Second.value;
+    let a = unit * 60
+    return a.toFixed()
+}
+function mToH() {
+    let unit = Second.value;
+    if (unit < 60) {
+        return `زمان شما شامل 1 ساعت نمی باشد`
+    } else {
+        let a = unit / 60
+        let b = a - a.toFixed()
+        let c = (b * 0.6).toFixed(2)[2]
+        let d = (b * 0.6).toFixed(2)[3]
+        return `${a.toFixed()} : ${c}${d}`
+    }
+}
+function hTos() {
+    let unit = Second.value;
+    let a = unit * 3600 .toFixed()
+    return a
+}
+function hToM() {
+    let unit = Second.value;
+    let a = unit * 60 .toFixed()
+    return a
 }
