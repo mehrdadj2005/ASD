@@ -262,7 +262,6 @@ form input[type="button"]:nth-last-of-type(1) {
   transition-delay: 0.15s;
 }
 
-
 #cbx4:checked+.check svg {
   stroke: var(--accent-color, #a3e583);
 }
