@@ -10,18 +10,31 @@
 </head>
 
 <body>
+    <!-- loading start>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <div class="loaderDiv">
         <span class="loader"></span>
     </div>
+    <!-- loading end<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+    
+    <!-- header start>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <header>
         <input type="button" value="CALCULATOR" id="calculator">
         <input type="button" value="MBI" id="mbi">
         <input type="button" value="CONVERT LENGTH UNITS" id="ConvertLengthUnits">
         <input type="button" value="CONVERT TIME UNIT" id="ConvertTimeUnits">
     </header>
+    <!-- header end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
+
+    <!-- main start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <main>
+        <!-- div left start>>>>>>>>>>>>>>>>>>>>>>>> -->
         <img src="" alt="">
+        <!-- div left end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+        <!-- div right start>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+        <!-- calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
         <form name="clac" id="clac">
             <input type="text" disabled value="" name="display">
             <input type="button" value="AC" onclick="as()">
@@ -45,6 +58,9 @@
             <input type="button" value="=" onclick="equal()">
             <div style="clear: both;"></div>
         </form>
+        <!-- calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+        <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
         <form name="good" method="get" id="bmiForm">
             <div id="change">
                 <input type="text" class="weight" placeholder="kg" value="">
@@ -113,6 +129,9 @@
             <div class="result"></div>
             <div class="user"></div>
         </form>
+        <!-- BMI calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+        <!-- unit conversion calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
         <form name="good" id="unitForm">
             <h1>واحد طول تبدیل کننده</h1>
             <label for="unit01">مقدار:</label>
@@ -134,6 +153,9 @@
 
             <div class="leaghnt"></div>
         </form>
+        <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+         <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
         <form name="unitConversion" id="unitConversion">
             <div>
                 <input type="submit" name="unitConversion" value="asd">
@@ -165,7 +187,10 @@
             </div>
             <div class="khorji"></div>
         </form>
+        <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
     </main>
+    <!-- main end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
     <script src="script.js"></script>
 </body>

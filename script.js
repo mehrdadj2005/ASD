@@ -24,6 +24,7 @@ function calculator() {
     }
     x.style = 'display:inline-block;'
 }
+
 function mbi() {
     let x = document.querySelector('#bmiForm')
     for (let i = 0; i < 4; i++) {
@@ -32,6 +33,7 @@ function mbi() {
     }
     x.style = 'display:flex;'
 }
+
 function ConvertLengthUnits() {
     let x = document.querySelector('#unitForm')
     for (let i = 0; i < 4; i++) {
