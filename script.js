@@ -20,33 +20,33 @@ function calculator() {
     let x = document.querySelector('#clac')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
-        y.style='display:none;'
+        y.style = 'display:none;'
     }
-    x.style='display:inline-block;'
+    x.style = 'display:inline-block;'
 }
 function mbi() {
     let x = document.querySelector('#bmiForm')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
-        y.style='display:none;'
+        y.style = 'display:none;'
     }
-    x.style='display:flex;'
+    x.style = 'display:flex;'
 }
 function ConvertLengthUnits() {
     let x = document.querySelector('#unitForm')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
-        y.style='display:none;'
+        y.style = 'display:none;'
     }
-    x.style='display:inline-block;'
+    x.style = 'display:inline-block;'
 }
 function ConvertTimeUnits() {
     let x = document.querySelector('#unitConversion')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
-        y.style='display:none;'
+        y.style = 'display:none;'
     }
-    x.style='display:inline-block;'
+    x.style = 'display:inline-block;'
 }
 // /\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 // سلکت کردن اینپوت نمایش اعداد
@@ -285,10 +285,7 @@ function sToM() {
         return `زمان شما شامل 1 دقیقه نمی باشد`
     } else {
         let a = unit / 60
-        let b = a - a.toFixed()
-        let c = (b * 0.6).toFixed(2)[2]
-        let d = (b * 0.6).toFixed(2)[3]
-        return `${a.toFixed()} : ${c}${d}`
+        return a
     }
 }
 
@@ -298,11 +295,8 @@ function sToH() {
     if (unit < 3600) {
         return `زمان شما شامل 1 ساعت نمی باشد`
     } else {
-        let a = unit / 3600;
-        let b = a - a.toFixed()
-        let c = (b * 0.6).toFixed(2)[3]
-        let d = (b * 0.6).toFixed(2)[4]
-        return `${a.toFixed()} : ${c}${d}`
+        let a = unit / 3600
+        return a
     }
 }
 
@@ -310,7 +304,7 @@ function sToH() {
 function mToS() {
     let unit = Second.value;
     let a = unit * 60
-    return a.toFixed()
+    return a
 }
 
 //  فانکشن تبدیل دقیقه به ساعت
@@ -320,10 +314,7 @@ function mToH() {
         return `زمان شما شامل 1 ساعت نمی باشد`
     } else {
         let a = unit / 60
-        let b = a - a.toFixed()
-        let c = (b * 0.6).toFixed(2)[2]
-        let d = (b * 0.6).toFixed(2)[3]
-        return `${a.toFixed()} : ${c}${d}`
+        return a
     }
 }
 

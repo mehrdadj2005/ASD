@@ -290,6 +290,13 @@ li {
 
 #unitConversion>div {
   display: flex;
+  flex-direction: column-reverse;
+}
+
+#unitConversion>div>div{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }
 
 #unitConversion ul {
