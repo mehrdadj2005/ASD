@@ -10,10 +10,26 @@ html {
   background-color: rgb(0, 166, 255);
 
 }
-
+#randomPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#randomPage div{
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #a3e583;
+}
+#randomPage div p{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: chocolate;
+}
 header {
   margin-top: 10px;
-  display: flex;
+  display: none;
   justify-content: space-around;
   height: 7vh;
 }
@@ -32,7 +48,7 @@ header input {
 main {
   width: 60%;
   margin: 5% auto;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
 }

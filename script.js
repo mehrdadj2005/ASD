@@ -1,14 +1,50 @@
+const main = document.querySelector('main');
+const header = document.querySelector('header');
+// دیو پدر متنی که رندم میاد
+const randomPage=document.querySelector('#randomPage')
+
 // انتظار برای لودینگ به مدت 5 ثانیه
+
 setTimeout(function () {
     // مخفی کردن لودینگ و نمایش محتوای صفحه
     const loaderDiv = document.querySelector('.loaderDiv');
-    const main = document.querySelector('main');
-    const header = document.querySelector('header');
-
+    // 5ثانیه ک تمام شد لودینگ میره
     loaderDiv.style.display = 'none';
-    header.style.display = 'flex';
-    main.style.display = "flex";
-}, 3000);
+    // بعد فانکشن اجرا میشه
+    showRandomMatn()
+    // 
+    setTimeout(function () {
+        
+        randomPage.style.display = 'none';
+        main.style.display="flex";
+        header.style.display="flex"
+
+
+    }, 3000); 
+}, 5000);
+
+const matn=[
+    "کلمات قدرت زیادی دارند, لطفا مراقب باشید...",
+    "سال دیگه این موقع هیچ کدوم از چیزهایی که الان استرس شون رو داری کوچکترین اهمیتی نخواهند داشت",
+    "به شیوه خودت زندگی کن, اینجا پشت خدا هم حرف میزنند",
+    "تنها زمانی شکست میخوری که زمین بخوری و دیگه بلند نشی...",
+    "اگه اینقدر شجاع بدی که شروع کنی و انقدر قوی هستی که ادامه بدی, پس انقدر لیاقت داری که بهش برسی..."
+]
+getRandomMatn()
+function getRandomMatn() {
+    const random = Math.floor(Math.random() *matn.length);
+    
+   return matn[random];
+   
+}
+function showRandomMatn() {
+    const randomMatn =document.querySelector("#randomPage>div>p")
+
+    randomMatn.textContent=getRandomMatn()
+   
+}
+
+
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 let calculatorHeader = document.querySelector('#calculator').addEventListener('click', calculator)
@@ -29,7 +65,8 @@ function mbi() {
     let x = document.querySelector('#bmiForm')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
-        y.style = 'display:none;'
+        console.log(y);
+        y.style='display:none;'
     }
     x.style = 'display:flex;'
 }
