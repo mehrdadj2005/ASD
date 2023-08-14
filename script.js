@@ -1,28 +1,3 @@
-const main = document.querySelector('main');
-const header = document.querySelector('header');
-// دیو پدر متنی که رندم میاد
-const randomPage=document.querySelector('#randomPage')
-
-// انتظار برای لودینگ به مدت 5 ثانیه
-
-setTimeout(function () {
-    // مخفی کردن لودینگ و نمایش محتوای صفحه
-    const loaderDiv = document.querySelector('.loaderDiv');
-    // 5ثانیه ک تمام شد لودینگ میره
-    loaderDiv.style.display = 'none';
-    // بعد فانکشن اجرا میشه
-    showRandomMatn()
-    // 
-    setTimeout(function () {
-        
-        randomPage.style.display = 'none';
-        main.style.display="flex";
-        header.style.display="flex"
-
-
-    }, 3000); 
-}, 5000);
-
 const matn=[
     "کلمات قدرت زیادی دارند, لطفا مراقب باشید...",
     "سال دیگه این موقع هیچ کدوم از چیزهایی که الان استرس شون رو داری کوچکترین اهمیتی نخواهند داشت",
@@ -30,21 +5,75 @@ const matn=[
     "تنها زمانی شکست میخوری که زمین بخوری و دیگه بلند نشی...",
     "اگه اینقدر شجاع بدی که شروع کنی و انقدر قوی هستی که ادامه بدی, پس انقدر لیاقت داری که بهش برسی..."
 ]
-getRandomMatn()
-function getRandomMatn() {
+const pictiers =[
+    "img/matnSVG/loin.svg",
+    "img/matnSVG/wolf.jpg",
+    "img/matnSVG/wolfFace.jpg"
+]
+const mainPictiers=[
+    "img/SVG/Lifestyle Illustrations_1.svg",
+    "img/SVG/Lifestyle Illustrations_2.svg",
+    "img/SVG/Lifestyle Illustrations_3.svg",
+    "img/SVG/Lifestyle Illustrations_4.svg",
+    "img/SVG/Lifestyle Illustrations_5.svg",
+    "img/SVG/Lifestyle Illustrations_6.svg",
+    "img/SVG/Lifestyle Illustrations_7.svg",
+    "img/SVG/Lifestyle Illustrations_8.svg",
+    "img/SVG/Lifestyle Illustrations_9.svg",
+    "img/SVG/Lifestyle Illustrations_10.svg",
+    "img/SVG/Lifestyle Illustrations_11.svg",
+    "img/SVG/Lifestyle Illustrations_12.svg"
+]
+const main = document.querySelector('main');
+const header = document.querySelector('header');
+// دیو پدر متنی که رندم میاد
+const randomPage=document.querySelector('#randomPage')
+
+// انتظار برای لودینگ به مدت 5 ثانیه
+setTimeout(function () {
+    // مخفی کردن لودینگ و نمایش محتوای صفحه
+    const loaderDiv = document.querySelector('.loaderDiv');
+    // 5ثانیه ک تمام شد لودینگ میره
+    loaderDiv.style.display = 'none';
+    randomPage.style.display = 'flex';
+    // بعد فانکشن اجرا میشه
+    showRandomMatn()
+    // انتظار بعد از 3 ثانیه این فانکشن اجرا شود
+    setTimeout(function () {     
+        randomPage.style.display = 'none';
+        main.style.display="flex";
+        header.style.display="flex"
+        showRandomLeftPictier();
+    }, 6000); 
+}, 3000);
+// فانکشن برای گرفتن رندم متن
+function getRandomMatn() {  
     const random = Math.floor(Math.random() *matn.length);
-    
-   return matn[random];
-   
+    return matn[random] ;  
 }
+// برای گرفتن رندم عکس های بالای متن
+function getRandomPictier() {
+    const randomPictier = Math.floor(Math.random() *pictiers.length);
+    return  pictiers[randomPictier];
+}
+const randomMatn =document.querySelector("#randomPage>div>p")
+const randomPictier = document.querySelector("#randomPage>div>img");
+// برای نمایش متن و عکس بالای ان در مکان درست
 function showRandomMatn() {
-    const randomMatn =document.querySelector("#randomPage>div>p")
-
     randomMatn.textContent=getRandomMatn()
-   
+    randomPictier.src=getRandomPictier();
 }
 
-
+// فانکشن برای گرفتن عکس رندم به دیو سمت چپ
+function getRandomLeftPictier() {
+    const random=Math.floor(Math.random()*mainPictiers.leanght)
+    return mainPictiers[random]
+}
+// برای نمایش عکس رندم دیو سمت چپ
+function showRandomLeftPictier(arams) {
+    const leftDiv=document.querySelector(".leftDiv img");
+    leftDiv.textContent=getRandomLeftPictier()
+}
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 let calculatorHeader = document.querySelector('#calculator').addEventListener('click', calculator)
