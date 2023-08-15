@@ -66,13 +66,13 @@ function showRandomMatn() {
 
 // فانکشن برای گرفتن عکس رندم به دیو سمت چپ
 function getRandomLeftPictier() {
-    const random=Math.floor(Math.random()*mainPictiers.leanght)
+    const random=Math.floor(Math.random()*mainPictiers.length)
     return mainPictiers[random]
 }
 // برای نمایش عکس رندم دیو سمت چپ
 function showRandomLeftPictier(arams) {
     const leftDiv=document.querySelector(".leftDiv img");
-    leftDiv.textContent=getRandomLeftPictier()
+    leftDiv.src=getRandomLeftPictier()
 }
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/
