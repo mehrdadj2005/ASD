@@ -1,13 +1,13 @@
-@font-face {
-  font-family: Montserrat;
-  src: url(fonts/Montserrat-BoldItalic.ttf);
-}
 
+@font-face {
+  font-family: persionFont;
+  src: url(persionFont/Digi\ Rastin\ Plus\ Circle.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   outline: none;
-  font-family: Montserrat;
+  font-family: persionFont;
   /* font-size: 20px; */
 }
 
@@ -52,7 +52,6 @@ input::-webkit-inner-spin-button {
 /* random page>matn  */
 #randomPage div p {
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
   color: rgb(255, 255, 255);
 }
 
@@ -83,7 +82,7 @@ header div:first-of-type {
 }
 
 header div:first-of-type img {
-  width: 100%;
+  width: 145%;
   border-radius: 50px;
 }
 
@@ -101,6 +100,7 @@ header div:last-of-type:hover> :not(:hover) {
 header input {
   color: #fff;
   display: flex;
+  overflow: visible;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -149,7 +149,9 @@ main {
 .rightDiv {
   width: 50%;
 }
-
+h1{
+  text-align: center;
+}
 form {
   width: 50%;
   margin: 10px auto;
@@ -158,7 +160,14 @@ form {
   animation: formStart .5s linear forwards;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #fff;
+  color: #00ddff;
+  /* From https://css.glass */
+  background: rgba(0, 242, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
 
 @keyframes formStart {
@@ -191,11 +200,25 @@ form input[type="button"] {
   text-align: center;
   margin: 0 0 5px 5px;
 }
-
+form input[type="number"]{
+  width: 100%;
+  margin-bottom: 10px;
+}
 form input[type="button"]:nth-last-of-type(1) {
   background-color: #28D319;
   color: #fff;
   width: calc(50% - 7px);
+}
+form input[type="submit"]{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #28D319;
+  color: #fff;
+}
+form label {
+  display: inline-block;
+  margin: 10px;
 }
 
 /* -----------bmi section------------------------ */
@@ -203,48 +226,37 @@ form input[type="button"]:nth-last-of-type(1) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 6px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: rgb(0, 255, 255);
   display: none;
 
 }
 
-#femalelMale {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 10px;
-  width: 100%;
-
-}
-
-.ageMore19 {
-  margin-bottom: 7px;
+#bmiForm>div {
+  width: 95%;
 }
 
 #bmiForm input {
   margin: 8px auto;
-  width: calc(100% - 5%);
+  width: 100%
 }
 
 #bmiForm button {
   padding: 2px 8px 2px 8px;
-
+  width: 100%
 }
 
 .result {
-  color: #00d9ff;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 5px;
+  margin: 5px auto;
+}
 
-
+.user {
+  text-align: center;
 }
 
 /* ----------------------BMI section ensd------------------------------- */
@@ -464,4 +476,22 @@ header {
 
 #unitForm {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header input {
+    font-size: 7px;
+  }
+
+  .leftDiv {
+    display: none;
+  }
+
+  .rightDiv {
+    width: 100%;
+  }
+
+  form {
+    padding: 20px;
+  }
 }

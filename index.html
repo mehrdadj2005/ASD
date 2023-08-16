@@ -79,69 +79,17 @@
 
             <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <form name="good" method="get" id="bmiForm">
+                <h1>شاخص توده بدنی</h1>
                 <div id="change">
                     <h4>kg</h4>
-                    <input type="text" class="weight" placeholder="50" value="">
+                    <input type="number" class="weight" placeholder="50" value="">
                 </div>
                 <div id="changTO">
                     <h4>m</h4>
                     <input type="text" class="height" placeholder="1.70" value="">
                 </div>
-                <div id="femalelMale">
-                    <div class="female">
-                        <span>زن</span>
-                        <input name="good" type="radio" id="cbx1" style="display: none;">
-                        <label for="cbx1" class="check">
 
-                            <svg width="15px" height="15px" viewBox="0 0 18 18">
-                                <path
-                                    d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                                </path>
-                                <polyline points="1 9 7 14 15 4"></polyline>
-                            </svg>
-                        </label>
-                    </div>
 
-                    <div class="male">
-                        <span>مرد</span>
-                        <input name="good" type="radio" id="cbx2" style="display: none;">
-                        <label for="cbx2" class="check">
-
-                            <svg width="15px" height="15px" viewBox="0 0 18 18">
-                                <path
-                                    d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                                </path>
-                                <polyline points="1 9 7 14 15 4"></polyline>
-                            </svg>
-                        </label>
-                    </div>
-
-                </div>
-                <div class="ageMore19">
-                    <span>سن 19 سال یا بالاتر</span>
-                    <input name="bad" type="radio" id="cbx3" style="display: none;">
-                    <label for="cbx3" class="check">
-
-                        <svg width="15px" height="15px" viewBox="0 0 18 18">
-                            <path
-                                d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                            </path>
-                            <polyline points="1 9 7 14 15 4"></polyline>
-                        </svg>
-                    </label>
-                </div>
-                <div class="leasThan19">
-                    <span>سن 19 سال به پایین</span>
-                    <input name="bad" type="radio" id="cbx4" style="display: none;">
-                    <label for="cbx4" class="check">
-                        <svg width="15px" height="15px" viewBox="0 0 18 18">
-                            <path
-                                d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                            </path>
-                            <polyline points="1 9 7 14 15 4"></polyline>
-                        </svg>
-                    </label>
-                </div>
                 <input type="button" value="✔" class="calculateBtn">
 
 
@@ -159,25 +107,24 @@
                     <option value="meter">متر</option>
                     <option value="cm">سانتی متر</option>
                 </select>
-                <input type="number" id="unit">
-
+                
                 <label for="unit02">تبدیل به:</label>
                 <select name="unit02" id="unit02">
                     <option value="kilometer02">کیلومتر</option>
                     <option value="meter02">متر</option>
                     <option value="cm02">سانتی متر</option>
                 </select>
-
+                <input type="number" id="unit">
+                
                 <input type="submit" name="good" value="محاسبه" class="mohasebe">
-
+                
                 <div class="leaghnt"></div>
             </form>
             <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-
+            
             <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
             <form name="unitConversion" id="unitConversion">
                 <div>
-                    <input type="submit" name="unitConversion" value="محاسبه" class="mohasebe">
                     <input type="number" id="Second" value="">
                     <div>
                         <ul id="ul1">
@@ -201,12 +148,13 @@
                     </div>
                     <h1>تبدیل کننده واحد زمان</h1>
                 </div>
+                <input type="submit" name="unitConversion" value="محاسبه" class="mohasebe">
                 <div class="khorji"></div>
             </form>
             <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
         </div>
-
+        
     </main>
     <!-- main end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 

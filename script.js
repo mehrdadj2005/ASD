@@ -104,15 +104,16 @@ function ConvertLengthUnits() {
         let y = document.querySelectorAll('body main  form')[i]
         y.style = 'display:none;'
     }
-    x.style = 'display:inline-block;'
+    x.style = 'display:block;'
 }
+
 function ConvertTimeUnits() {
     let x = document.querySelector('#unitConversion')
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
         y.style = 'display:none;'
     }
-    x.style = 'display:inline-block;'
+    x.style = 'display:block;'
 }
 // /\/\/\/\/\/\/\/\/\/\/\//\/\//\/\/\/\/\/\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 // سلکت کردن اینپوت نمایش اعداد
@@ -148,55 +149,25 @@ const weightInput = document.querySelector('.weight');
 const heightInput = document.querySelector('.height');
 const resultParagraph = document.querySelector('.result');
 const user = document.querySelector('.user')
-const womanGender = document.querySelector('.female input')
-console.log(womanGender);
-const manGender = document.querySelector('.male > input')
-const mare19Age = document.querySelector('.ageMore19>input')
-const leasThan19 = document.querySelector('.leasThan19>input')
-
-manGender.addEventListener("click", man)
-function man() {
-    let x = 1
-    return x
-}
-womanGender.addEventListener("click", woman)
-function woman() {
-    let x = 1
-    return x
-}
-
-mare19Age.addEventListener("click", more19)
-function more19() {
-    let x = 1
-    return x
-}
-leasThan19.addEventListener("click", leas19)
-function leas19() {
-    let x = 1
-    return x
-}
 
 // وقتی روه دکمه محاسبه کلیک میشه
 calculateBtn.addEventListener('click', function () {
-    console.log(man());
-    if ((man() == 1 || woman() == 1) && (more19() == 1 || leas19() == 1)) {
 
-        // مقدار را از اینپوت با تایپ عدد میگیرد
-        const weight = parseFloat(weightInput.value);
-        const height = parseFloat(heightInput.value);
-        // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
-        // اگر هم یکی از اینپوت ها خالی باشند ارور میده
-        if (!isNaN(weight) && !isNaN(height) && height > 0) {
-            // فرموا محاسبه شاخص توده بدنی
-            // وزن بر واحد کیلو گرم
-            // قد بر واحد متر
-            // فرمول = وزن تقسیم بر قد به توان 2
-            const bmi = weight / (height * height);
-            resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
-            user.textContent = `وضعیت: ${satuse(bmi.toFixed(2))}`;
 
-        }
 
+    // مقدار را از اینپوت با تایپ عدد میگیرد
+    const weight = parseFloat(weightInput.value);
+    const height = parseFloat(heightInput.value);
+    // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
+    // اگر هم یکی از اینپوت ها خالی باشند ارور میده
+    if (!isNaN(weight) && !isNaN(height) && height > 0) {
+        // فرموا محاسبه شاخص توده بدنی
+        // وزن بر واحد کیلو گرم
+        // قد بر واحد متر
+        // فرمول = وزن تقسیم بر قد به توان 2
+        const bmi = weight / (height * height);
+        resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
+        user.textContent = `وضعیت: ${satuse(bmi.toFixed(2))}`;
     } else {
         resultParagraph.textContent = "لطفا کادر را درست پر کنید";
     }
@@ -231,11 +202,14 @@ unitForm.addEventListener("submit", convertToMeters)
 function convertToMeters(e) {
     // مقدار داخل اینپوت را به عدد میگیرد
     let unit = parseFloat(document.getElementById("unit").value);
+
     // متغییر برای پیدا کردن واحد مقداری که میخوایم تبدیل کنیم
     const unit01 = document.querySelector('#unit01').value;
     // متغییر برای پیدا کردن واحد مقداری که میخوایم تبدیل بشه
-    console.log(unit01);
     const unit02 = document.querySelector('#unit02').value
+    // if (unitInput.value ===) {
+        
+    // }
     // اگر مقداری که میخوایم تبدیل کنیم کیلوگرم باشه 
     if (unit01 == "kilometer") {
         // تگر مقداری که میخوایم تبدیل بشه متر باشه
@@ -365,23 +339,17 @@ unitConversion.addEventListener('click', () => {
 //  فانکشن تبدیل ثانیه به دقیقه
 function sToM() {
     let unit = Second.value;
-    if (unit < 60) {
-        return `زمان شما شامل 1 دقیقه نمی باشد`
-    } else {
-        let a = unit / 60
+        let a = (unit / 60).toFixed(7)
         return a
-    }
+    
 }
 
 //  فانکشن تبدیل ثانیه به ساعت
 function sToH() {
     let unit = Second.value;
-    if (unit < 3600) {
-        return `زمان شما شامل 1 ساعت نمی باشد`
-    } else {
-        let a = unit / 3600
+        let a = (unit / 3600).toFixed(7)
         return a
-    }
+    
 }
 
 //  فانکشن تبدیل دقیقه به ثانیه
@@ -394,24 +362,21 @@ function mToS() {
 //  فانکشن تبدیل دقیقه به ساعت
 function mToH() {
     let unit = Second.value;
-    if (unit < 60) {
-        return `زمان شما شامل 1 ساعت نمی باشد`
-    } else {
-        let a = unit / 60
+        let a = (unit / 60).toFixed(7)
         return a
-    }
+    
 }
 
 //  فانکشن تبدیل ساعت به ثانیه
 function hTos() {
     let unit = Second.value;
-    let a = unit * 3600 .toFixed()
+    let a = (unit * 3600).toFixed()
     return a
 }
 
 //  فانکشن تبدیل ساعت به دقیقه
 function hToM() {
     let unit = Second.value;
-    let a = unit * 60 .toFixed()
+    let a = (unit * 60).toFixed()
     return a
 }
