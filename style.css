@@ -8,7 +8,7 @@
   padding: 0;
   outline: none;
   font-family: Montserrat;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 body,
@@ -48,15 +48,17 @@ html {
 #randomPage div p {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  color: chocolate;
+  color: rgb(255, 255, 255);
 }
 
 /* random page>matn */
 /* random page end---------------- */
 header {
+  padding-top: 20px;
   margin-top: 10px;
   display: none;
   justify-content: space-around;
+  align-items: center;
   height: 7vh;
   animation: start .5s linear forwards;
 }
@@ -70,16 +72,35 @@ header {
     transform: translateY(0px);
   }
 }
-
+header div:first-of-type{
+  width: 50px;
+}
+header div:first-of-type img{
+  width: 100%;
+  border-radius: 50px;
+}
+header div:last-of-type{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+}
+header div:last-of-type:hover> :not(:hover){
+  opacity: .4;
+}
 header input {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   width: calc(100% / 4 - 40px);
   height: 5vh;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #28D319;
   cursor: pointer;
+  transition: all .3s;
 }
 
 main {
@@ -99,6 +120,15 @@ main {
 .leftDiv img {
   width: 100%;
   height: 100%;
+  animation: imageStart .5s linear forwards;
+}
+@keyframes imageStart {
+  from{
+    transform: translateX(-150px);
+  }
+  to{
+    transform: translateX(0px);
+  }
 }
 
 /* left div style end */
@@ -113,10 +143,19 @@ form {
   margin: 10px auto;
   border-radius: 10px;
   padding: 10px;
-  background-color: #e7e7e714;
-  border: 1px dashed rgb(0, 247, 255);
+  animation: formStart .5s linear forwards;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+@keyframes formStart {
+  from{
+    transform: translateX(150px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
 form input[name="display"] {
   background-color: #ddd;
   height: 40px;
@@ -139,7 +178,8 @@ form input[type="button"] {
 }
 
 form input[type="button"]:nth-last-of-type(1) {
-  background-color: yellow;
+  background-color: #28D319;
+  color: #fff;
   width: calc(50% - 7px);
 }
 
@@ -148,17 +188,27 @@ form input[type="button"]:nth-last-of-type(1) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.84);
   border-radius: 6px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-
+color: rgb(0, 255, 255);
   display: none;
 
 }
+#femalelMale{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+  width: 100%;
 
+}
+.ageMore19{
+  margin-bottom: 7px;
+}
 #bmiForm input {
   margin: 8px auto;
   width: calc(100% - 5%);
@@ -170,7 +220,7 @@ form input[type="button"]:nth-last-of-type(1) {
 }
 
 .result {
-  color: #010101;
+  color: #00d9ff;
   font-size: 18px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;

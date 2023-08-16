@@ -1,14 +1,12 @@
-const matn = [
-    "کلمات قدرت زیادی دارند, لطفا مراقب باشید...",
+const matn=[
+    "کلمات قدرت زیادی دارند, لطفا مراقب باشید",
     "سال دیگه این موقع هیچ کدوم از چیزهایی که الان استرس شون رو داری کوچکترین اهمیتی نخواهند داشت",
     "به شیوه خودت زندگی کن, اینجا پشت خدا هم حرف میزنند",
-    "تنها زمانی شکست میخوری که زمین بخوری و دیگه بلند نشی...",
-    "اگه اینقدر شجاع بدی که شروع کنی و انقدر قوی هستی که ادامه بدی, پس انقدر لیاقت داری که بهش برسی..."
+    "تنها زمانی شکست میخوری که زمین بخوری و دیگه بلند نشی",
+    "اگه اینقدر شجاع بودی که شروع کنی و اینقدر قوی هستی که ادامه بدی, پس اینقدر لیاقت داری که بهش برسی..."
 ]
 const pictiers = [
     "img/matnSVG/loin.svg",
-    "img/matnSVG/wolf.jpg",
-    "img/matnSVG/wolfFace.jpg"
 ]
 const mainPictiers = [
     "img/SVG/Lifestyle Illustrations_1.svg",
@@ -87,7 +85,7 @@ function calculator() {
         let y = document.querySelectorAll('body main  form')[i]
         y.style = 'display:none;'
     }
-    x.style = 'display:inline-block;'
+    x.style = 'display:block;'
 }
 
 function mbi() {
@@ -151,27 +149,56 @@ const heightInput = document.querySelector('.height');
 const resultParagraph = document.querySelector('.result');
 const user = document.querySelector('.user')
 const womanGender = document.querySelector('.female input')
+console.log(womanGender);
 const manGender = document.querySelector('.male > input')
 const mare19Age = document.querySelector('.ageMore19>input')
 const leasThan19 = document.querySelector('.leasThan19>input')
 
+manGender.addEventListener("click",man)
+function man() {
+    let x = 1
+    return x
+}
+womanGender.addEventListener("click",woman)
+function woman() {
+    let x = 1
+    return x
+}
+
+mare19Age.addEventListener("click",more19)
+function more19() {
+    let x = 1
+    return x
+}
+leasThan19.addEventListener("click",leas19)
+function leas19() {
+    let x = 1
+    return x
+}
+
 // وقتی روه دکمه محاسبه کلیک میشه
 calculateBtn.addEventListener('click', function () {
-    // مقدار را از اینپوت با تایپ عدد میگیرد
-    const weight = parseFloat(weightInput.value);
+    console.log(man());
+    if ((man()==1 || woman()==1) && (more19()==1 || leas19()==1) ) {
+        
+        // مقدار را از اینپوت با تایپ عدد میگیرد
+        const weight = parseFloat(weightInput.value);
     const height = parseFloat(heightInput.value);
     // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
     // اگر هم یکی از اینپوت ها خالی باشند ارور میده
-    if (!isNaN(weight) && !isNaN(height) && height > 0) {
+    if (!isNaN(weight) && !isNaN(height) && height > 0 ) {
         // فرموا محاسبه شاخص توده بدنی
         // وزن بر واحد کیلو گرم
         // قد بر واحد متر
         // فرمول = وزن تقسیم بر قد به توان 2
         const bmi = weight / (height * height);
         resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
-        user.textContent = `وضعیت:${satuse(bmi.toFixed(2))}`;
+        user.textContent = `وضعیت: ${satuse(bmi.toFixed(2))}`;
+        
+    }
+  
     } else {
-        resultParagraph.textContent = "Please enter valid weight and height.";
+        resultParagraph.textContent = "لطفا کادر را درست پر کنید";
     }
 });
 
