@@ -1,4 +1,4 @@
-const matn=[
+const matn = [
     "کلمات قدرت زیادی دارند, لطفا مراقب باشید",
     "سال دیگه این موقع هیچ کدوم از چیزهایی که الان استرس شون رو داری کوچکترین اهمیتی نخواهند داشت",
     "به شیوه خودت زندگی کن, اینجا پشت خدا هم حرف میزنند",
@@ -42,8 +42,8 @@ setTimeout(function () {
         main.style.display = "flex";
         header.style.display = "flex"
         showRandomLeftPictier();
-    }, 6000);
-}, 3000);
+    }, 1000);
+}, 1000);
 // فانکشن برای گرفتن رندم متن
 function getRandomMatn() {
     const random = Math.floor(Math.random() * matn.length);
@@ -154,23 +154,23 @@ const manGender = document.querySelector('.male > input')
 const mare19Age = document.querySelector('.ageMore19>input')
 const leasThan19 = document.querySelector('.leasThan19>input')
 
-manGender.addEventListener("click",man)
+manGender.addEventListener("click", man)
 function man() {
     let x = 1
     return x
 }
-womanGender.addEventListener("click",woman)
+womanGender.addEventListener("click", woman)
 function woman() {
     let x = 1
     return x
 }
 
-mare19Age.addEventListener("click",more19)
+mare19Age.addEventListener("click", more19)
 function more19() {
     let x = 1
     return x
 }
-leasThan19.addEventListener("click",leas19)
+leasThan19.addEventListener("click", leas19)
 function leas19() {
     let x = 1
     return x
@@ -179,24 +179,24 @@ function leas19() {
 // وقتی روه دکمه محاسبه کلیک میشه
 calculateBtn.addEventListener('click', function () {
     console.log(man());
-    if ((man()==1 || woman()==1) && (more19()==1 || leas19()==1) ) {
-        
+    if ((man() == 1 || woman() == 1) && (more19() == 1 || leas19() == 1)) {
+
         // مقدار را از اینپوت با تایپ عدد میگیرد
         const weight = parseFloat(weightInput.value);
-    const height = parseFloat(heightInput.value);
-    // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
-    // اگر هم یکی از اینپوت ها خالی باشند ارور میده
-    if (!isNaN(weight) && !isNaN(height) && height > 0 ) {
-        // فرموا محاسبه شاخص توده بدنی
-        // وزن بر واحد کیلو گرم
-        // قد بر واحد متر
-        // فرمول = وزن تقسیم بر قد به توان 2
-        const bmi = weight / (height * height);
-        resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
-        user.textContent = `وضعیت: ${satuse(bmi.toFixed(2))}`;
-        
-    }
-  
+        const height = parseFloat(heightInput.value);
+        // شرط میزاریم میگیم اگر اینپوت قد خالی بود ارور بده زیرا که مخرج کسر نباید منفی 
+        // اگر هم یکی از اینپوت ها خالی باشند ارور میده
+        if (!isNaN(weight) && !isNaN(height) && height > 0) {
+            // فرموا محاسبه شاخص توده بدنی
+            // وزن بر واحد کیلو گرم
+            // قد بر واحد متر
+            // فرمول = وزن تقسیم بر قد به توان 2
+            const bmi = weight / (height * height);
+            resultParagraph.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
+            user.textContent = `وضعیت: ${satuse(bmi.toFixed(2))}`;
+
+        }
+
     } else {
         resultParagraph.textContent = "لطفا کادر را درست پر کنید";
     }
@@ -325,21 +325,9 @@ let UnitList2 = document.querySelector('#ul2')
 let unit1 = document.querySelector('#unit1')
 let unit2 = document.querySelector('#unit2')
 
-UnitList1.addEventListener('click', unitChanger1)
-UnitList2.addEventListener('click', unitChanger2)
-unitConversion.addEventListener('submit', www)
 
-function unitChanger1(e) {
-    let unitValue = e.target.textContent
-    unit1.innerHTML = unitValue
-}
+unitConversion.addEventListener('click', () => {
 
-function unitChanger2(e) {
-    let unitValue = e.target.textContent
-    unit2.innerHTML = unitValue
-}
-
-function www(e) {
     let khorji = document.querySelector('.khorji')
     let valueinput = Second.value
     const unit01 = unit1.textContent;
@@ -371,7 +359,8 @@ function www(e) {
         }
     }
     e.preventDefault()
-}
+
+})
 
 //  فانکشن تبدیل ثانیه به دقیقه
 function sToM() {

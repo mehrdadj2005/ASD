@@ -20,6 +20,11 @@ html {
 
 }
 
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
 /* random page style start------------- */
 #randomPage {
   width: 100%;
@@ -449,32 +454,6 @@ li {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-}
-
-#unitConversion ul {
-  margin-left: 5px;
-}
-
-#unitConversion ul ul {
-  position: absolute;
-  display: none;
-}
-
-#unitConversion ul ul li {
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.22);
-  border-radius: 5px;
-  background-color: white;
-}
-
-#unitConversion ul ul li:hover {
-  background-color: #ddd;
-  transition-duration: 0.3s;
-
-}
-
-#unitConversion ul>li:hover ul {
-  display: block;
 }
 
 /* در ابتدا دیسپلی هدر و مین را تغییر میدهیم تا لودینگ به نمکایش در بیاید */
