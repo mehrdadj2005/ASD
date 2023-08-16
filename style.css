@@ -72,22 +72,27 @@ header {
     transform: translateY(0px);
   }
 }
-header div:first-of-type{
+
+header div:first-of-type {
   width: 50px;
 }
-header div:first-of-type img{
+
+header div:first-of-type img {
   width: 100%;
   border-radius: 50px;
 }
-header div:last-of-type{
+
+header div:last-of-type {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 70%;
 }
-header div:last-of-type:hover> :not(:hover){
+
+header div:last-of-type:hover> :not(:hover) {
   opacity: .4;
 }
+
 header input {
   color: #fff;
   display: flex;
@@ -122,11 +127,13 @@ main {
   height: 100%;
   animation: imageStart .5s linear forwards;
 }
+
 @keyframes imageStart {
-  from{
+  from {
     transform: translateX(-150px);
   }
-  to{
+
+  to {
     transform: translateX(0px);
   }
 }
@@ -148,14 +155,17 @@ form {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 @keyframes formStart {
-  from{
+  from {
     transform: translateX(150px);
   }
-  to{
+
+  to {
     transform: translateX(0px);
   }
 }
+
 form input[name="display"] {
   background-color: #ddd;
   height: 40px;
@@ -193,11 +203,12 @@ form input[type="button"]:nth-last-of-type(1) {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-color: rgb(0, 255, 255);
+  color: rgb(0, 255, 255);
   display: none;
 
 }
-#femalelMale{
+
+#femalelMale {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -206,9 +217,11 @@ color: rgb(0, 255, 255);
   width: 100%;
 
 }
-.ageMore19{
+
+.ageMore19 {
   margin-bottom: 7px;
 }
+
 #bmiForm input {
   margin: 8px auto;
   width: calc(100% - 5%);
