@@ -15,7 +15,7 @@
         <span class="loader"></span>
     </div>
     <!-- loading end<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-    
+
     <div id="randomPage">
         <div><img src="" alt=""></div>
         <div>
@@ -40,50 +40,79 @@
         <div class="leftDiv">
             <img src="" alt="">
         </div>
-        
+
         <!-- div left end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
         <!-- div right start>>>>>>>>>>>>>>>>>>>>>>>> -->
         <div class="rightDiv">
             <!-- calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-        <form name="clac" id="clac">
-            <input type="text" disabled value="" name="display">
-            <input type="button" value="AC" onclick="as()">
-            <input type="button" value="C" onclick="c()">
-            <input type="button" value="%" onclick="data(this.value)">
-            <input type="button" value="-" onclick="data(this.value)">
-            <input type="button" value="9" onclick="data(this.value)">
-            <input type="button" value="8" onclick="data(this.value)">
-            <input type="button" value="7" onclick="data(this.value)">
-            <input type="button" value="*" onclick="data(this.value)">
-            <input type="button" value="6" onclick="data(this.value)">
-            <input type="button" value="5" onclick="data(this.value)">
-            <input type="button" value="4" onclick="data(this.value)">
-            <input type="button" value="/" onclick="data(this.value)">
-            <input type="button" value="3" onclick="data(this.value)">
-            <input type="button" value="2" onclick="data(this.value)">
-            <input type="button" value="1" onclick="data(this.value)">
-            <input type="button" value="+" onclick="data(this.value)">
-            <input type="button" value="0" onclick="data(this.value)">
-            <input type="button" value="." onclick="data(this.value)">
-            <input type="button" value="=" onclick="equal()">
-            <div style="clear: both;"></div>
-        </form>
-        <!-- calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+            <form name="clac" id="clac">
+                <input type="text" disabled value="" name="display">
+                <input type="button" value="AC" onclick="as()">
+                <input type="button" value="C" onclick="c()">
+                <input type="button" value="%" onclick="data(this.value)">
+                <input type="button" value="-" onclick="data(this.value)">
+                <input type="button" value="9" onclick="data(this.value)">
+                <input type="button" value="8" onclick="data(this.value)">
+                <input type="button" value="7" onclick="data(this.value)">
+                <input type="button" value="*" onclick="data(this.value)">
+                <input type="button" value="6" onclick="data(this.value)">
+                <input type="button" value="5" onclick="data(this.value)">
+                <input type="button" value="4" onclick="data(this.value)">
+                <input type="button" value="/" onclick="data(this.value)">
+                <input type="button" value="3" onclick="data(this.value)">
+                <input type="button" value="2" onclick="data(this.value)">
+                <input type="button" value="1" onclick="data(this.value)">
+                <input type="button" value="+" onclick="data(this.value)">
+                <input type="button" value="0" onclick="data(this.value)">
+                <input type="button" value="." onclick="data(this.value)">
+                <input type="button" value="=" onclick="equal()">
+                <div style="clear: both;"></div>
+            </form>
+            <!-- calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
-        <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-        <form name="good" method="get" id="bmiForm">
-            <div id="change">
-                <input type="text" class="weight" placeholder="kg" value="">
-            </div>
-            <div id="changTO">
-                <input type="text" class="height" placeholder="cm" value="">
-            </div>
-            <div id="femalelMale">
-                <div class="female">
-                    <span>زن</span>
-                    <input name="good" type="radio" id="cbx1" style="display: none;">
-                    <label for="cbx1" class="check">
+            <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+            <form name="good" method="get" id="bmiForm">
+                <div id="change">
+                    <input type="text" class="weight" placeholder="kg" value="">
+                </div>
+                <div id="changTO">
+                    <input type="text" class="height" placeholder="cm" value="">
+                </div>
+                <div id="femalelMale">
+                    <div class="female">
+                        <span>زن</span>
+                        <input name="good" type="radio" id="cbx1" style="display: none;">
+                        <label for="cbx1" class="check">
+
+                            <svg width="15px" height="15px" viewBox="0 0 18 18">
+                                <path
+                                    d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                                </path>
+                                <polyline points="1 9 7 14 15 4"></polyline>
+                            </svg>
+                        </label>
+                    </div>
+
+                    <div class="male">
+                        <span>مرد</span>
+                        <input name="good" type="radio" id="cbx2" style="display: none;">
+                        <label for="cbx2" class="check">
+
+                            <svg width="15px" height="15px" viewBox="0 0 18 18">
+                                <path
+                                    d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                                </path>
+                                <polyline points="1 9 7 14 15 4"></polyline>
+                            </svg>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="ageMore19">
+                    <span>سن 19 سال یا بالاتر</span>
+                    <input name="bad" type="radio" id="cbx3" style="display: none;">
+                    <label for="cbx3" class="check">
 
                         <svg width="15px" height="15px" viewBox="0 0 18 18">
                             <path
@@ -93,12 +122,10 @@
                         </svg>
                     </label>
                 </div>
-
-                <div class="male">
-                    <span>مرد</span>
-                    <input name="good" type="radio" id="cbx2" style="display: none;">
-                    <label for="cbx2" class="check">
-
+                <div class="leasThan19">
+                    <span>سن 19 سال به پایین</span>
+                    <input name="bad" type="radio" id="cbx4" style="display: none;">
+                    <label for="cbx4" class="check">
                         <svg width="15px" height="15px" viewBox="0 0 18 18">
                             <path
                                 d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
@@ -107,101 +134,75 @@
                         </svg>
                     </label>
                 </div>
-
-            </div>
-            <div class="ageMore19">
-                <span>سن 19 سال یا بالاتر</span>
-                <input name="bad" type="radio" id="cbx3" style="display: none;">
-                <label for="cbx3" class="check">
-
-                    <svg width="15px" height="15px" viewBox="0 0 18 18">
-                        <path
-                            d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                        </path>
-                        <polyline points="1 9 7 14 15 4"></polyline>
-                    </svg>
-                </label>
-            </div>
-            <div class="leasThan19">
-                <span>سن 19 سال به پایین</span>
-                <input name="bad" type="radio" id="cbx4" style="display: none;">
-                <label for="cbx4" class="check">
-                    <svg width="15px" height="15px" viewBox="0 0 18 18">
-                        <path
-                            d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
-                        </path>
-                        <polyline points="1 9 7 14 15 4"></polyline>
-                    </svg>
-                </label>
-            </div>
-            <input type="button" value="✔" class="calculateBtn">
+                <input type="button" value="✔" class="calculateBtn">
 
 
-            <div class="result"></div>
-            <div class="user"></div>
-        </form>
-        <!-- BMI calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+                <div class="result"></div>
+                <div class="user"></div>
+            </form>
+            <!-- BMI calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
-        <!-- unit conversion calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-        <form name="good" id="unitForm">
-            <h1>واحد طول تبدیل کننده</h1>
-            <label for="unit01">مقدار:</label>
-            <select name="unit01" id="unit01">
-                <option value="kilometer">کیلومتر</option>
-                <option value="meter">متر</option>
-                <option value="cm">سانتی متر</option>
-            </select>
-            <input type="number" id="unit">
+            <!-- unit conversion calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+            <form name="good" id="unitForm">
+                <h1>واحد طول تبدیل کننده</h1>
+                <label for="unit01">مقدار:</label>
+                <select name="unit01" id="unit01">
+                    <option value="kilometer">کیلومتر</option>
+                    <option value="meter">متر</option>
+                    <option value="cm">سانتی متر</option>
+                </select>
+                <input type="number" id="unit">
 
-            <label for="unit02">تبدیل به:</label>
-            <select name="unit02" id="unit02">
-                <option value="kilometer02">کیلومتر</option>
-                <option value="meter02">متر</option>
-                <option value="cm02">سانتی متر</option>
-            </select>
+                <label for="unit02">تبدیل به:</label>
+                <select name="unit02" id="unit02">
+                    <option value="kilometer02">کیلومتر</option>
+                    <option value="meter02">متر</option>
+                    <option value="cm02">سانتی متر</option>
+                </select>
 
-            <input type="submit" name="good" value="محاسبه">
+                <input type="submit" name="good" value="محاسبه">
 
-            <div class="leaghnt"></div>
-        </form>
-        <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+                <div class="leaghnt"></div>
+            </form>
+            <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
-         <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
-        <form name="unitConversion" id="unitConversion">
-            <div>
-                <input type="submit" name="unitConversion" value="asd">
-                <input type="text" id="Second" value="">
+            <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
+            <form name="unitConversion" id="unitConversion">
                 <div>
-                    <ul id="ul1">
-                        <li>
-                            <span id="unit1">asdasd</span>
-                            <ul>
-                                <li>Second</li>
-                                <li>minutes</li>
-                                <li>hour</li>
-                            </ul>
-                            <span>از</span>
-                        </li>
-                    </ul>
-                    <ul id="ul2">
-                        <li>
-                            <span id="unit2">asdasd</span>
-                            <span>به</span>
-                            <ul>
-                                <li>Second</li>
-                                <li>minutes</li>
-                                <li>hour</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <input type="submit" name="unitConversion" value="محاسبه">
+                    <input type="number" id="Second" value="">
+                    <div>
+                        <ul id="ul1">
+                            <li>
+                                <span id="unit1">unit</span>
+                                <ul>
+                                    <li>Second</li>
+                                    <li>minutes</li>
+                                    <li>hour</li>
+                                </ul>
+                                <span>از</span>
+                            </li>
+                        </ul>
+                        <ul id="ul2">
+                            <li>
+                                <span id="unit2">unit</span>
+                                <span>به</span>
+                                <ul>
+                                    <li>Second</li>
+                                    <li>minutes</li>
+                                    <li>hour</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <h1>تبدیل کننده واحد زمان</h1>
                 </div>
-            </div>
-            <div class="khorji"></div>
-        </form>
-        <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+                <div class="khorji"></div>
+            </form>
+            <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
         </div>
-        
+
     </main>
     <!-- main end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
