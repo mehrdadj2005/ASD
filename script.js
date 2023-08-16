@@ -1,16 +1,16 @@
-const matn=[
+const matn = [
     "کلمات قدرت زیادی دارند, لطفا مراقب باشید...",
     "سال دیگه این موقع هیچ کدوم از چیزهایی که الان استرس شون رو داری کوچکترین اهمیتی نخواهند داشت",
     "به شیوه خودت زندگی کن, اینجا پشت خدا هم حرف میزنند",
     "تنها زمانی شکست میخوری که زمین بخوری و دیگه بلند نشی...",
     "اگه اینقدر شجاع بدی که شروع کنی و انقدر قوی هستی که ادامه بدی, پس انقدر لیاقت داری که بهش برسی..."
 ]
-const pictiers =[
+const pictiers = [
     "img/matnSVG/loin.svg",
     "img/matnSVG/wolf.jpg",
     "img/matnSVG/wolfFace.jpg"
 ]
-const mainPictiers=[
+const mainPictiers = [
     "img/SVG/Lifestyle Illustrations_1.svg",
     "img/SVG/Lifestyle Illustrations_2.svg",
     "img/SVG/Lifestyle Illustrations_3.svg",
@@ -27,7 +27,7 @@ const mainPictiers=[
 const main = document.querySelector('main');
 const header = document.querySelector('header');
 // دیو پدر متنی که رندم میاد
-const randomPage=document.querySelector('#randomPage')
+const randomPage = document.querySelector('#randomPage')
 
 // انتظار برای لودینگ به مدت 5 ثانیه
 setTimeout(function () {
@@ -39,40 +39,40 @@ setTimeout(function () {
     // بعد فانکشن اجرا میشه
     showRandomMatn()
     // انتظار بعد از 3 ثانیه این فانکشن اجرا شود
-    setTimeout(function () {     
+    setTimeout(function () {
         randomPage.style.display = 'none';
-        main.style.display="flex";
-        header.style.display="flex"
+        main.style.display = "flex";
+        header.style.display = "flex"
         showRandomLeftPictier();
-    }, 6000); 
+    }, 6000);
 }, 3000);
 // فانکشن برای گرفتن رندم متن
-function getRandomMatn() {  
-    const random = Math.floor(Math.random() *matn.length);
-    return matn[random] ;  
+function getRandomMatn() {
+    const random = Math.floor(Math.random() * matn.length);
+    return matn[random];
 }
 // برای گرفتن رندم عکس های بالای متن
 function getRandomPictier() {
-    const randomPictier = Math.floor(Math.random() *pictiers.length);
-    return  pictiers[randomPictier];
+    const randomPictier = Math.floor(Math.random() * pictiers.length);
+    return pictiers[randomPictier];
 }
-const randomMatn =document.querySelector("#randomPage>div>p")
+const randomMatn = document.querySelector("#randomPage>div>p")
 const randomPictier = document.querySelector("#randomPage>div>img");
 // برای نمایش متن و عکس بالای ان در مکان درست
 function showRandomMatn() {
-    randomMatn.textContent=getRandomMatn()
-    randomPictier.src=getRandomPictier();
+    randomMatn.textContent = getRandomMatn()
+    randomPictier.src = getRandomPictier();
 }
 
 // فانکشن برای گرفتن عکس رندم به دیو سمت چپ
 function getRandomLeftPictier() {
-    const random=Math.floor(Math.random()*mainPictiers.length)
+    const random = Math.floor(Math.random() * mainPictiers.length)
     return mainPictiers[random]
 }
 // برای نمایش عکس رندم دیو سمت چپ
 function showRandomLeftPictier(arams) {
-    const leftDiv=document.querySelector(".leftDiv img");
-    leftDiv.src=getRandomLeftPictier()
+    const leftDiv = document.querySelector(".leftDiv img");
+    leftDiv.src = getRandomLeftPictier()
 }
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -95,7 +95,7 @@ function mbi() {
     for (let i = 0; i < 4; i++) {
         let y = document.querySelectorAll('body main  form')[i]
         console.log(y);
-        y.style='display:none;'
+        y.style = 'display:none;'
     }
     x.style = 'display:flex;'
 }
@@ -318,28 +318,28 @@ function www(e) {
     const unit01 = unit1.textContent;
     const unit02 = unit2.textContent;
 
-    if (unit01 == "Second") {
-        if (unit02 == "Second") {
+    if (unit01 == "ثانیه") {
+        if (unit02 == "ثانیه") {
             khorji.textContent = valueinput
-        } else if (unit02 == "minutes") {
+        } else if (unit02 == "دقیقه") {
             khorji.innerHTML = sToM()
-        } else if (unit02 == "hour") {
+        } else if (unit02 == "ساعت") {
             khorji.textContent = sToH()
         }
-    } else if (unit01 == "minutes") {
-        if (unit02 == "Second") {
+    } else if (unit01 == "دقیقه") {
+        if (unit02 == "ثانیه") {
             khorji.textContent = mToS()
-        } else if (unit02 == "minutes") {
+        } else if (unit02 == "دقیقه") {
             khorji.textContent = valueinput
-        } else if (unit02 == "hour") {
+        } else if (unit02 == "ساعت") {
             khorji.textContent = mToH()
         }
-    } else if (unit01 == "hour") {
-        if (unit02 == "Second") {
+    } else if (unit01 == "ساعت") {
+        if (unit02 == "ثانیه") {
             khorji.textContent = hTos()
-        } else if (unit02 == "minutes") {
+        } else if (unit02 == "دقیقه") {
             khorji.textContent = hToM()
-        } else if (unit02 == "hour") {
+        } else if (unit02 == "ساعت") {
             khorji.textContent = valueinput
         }
     }

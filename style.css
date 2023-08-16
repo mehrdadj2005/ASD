@@ -109,11 +109,12 @@ main {
 }
 
 form {
-  background-color: #222;
   width: 50%;
   margin: 10px auto;
   border-radius: 10px;
   padding: 10px;
+  background-color: #e7e7e714;
+  border: 1px dashed rgb(0, 247, 255);
 }
 
 form input[name="display"] {
@@ -350,8 +351,30 @@ li {
 }
 
 #unitConversion {
+  width: 40%;
   display: none;
   text-align: center;
+}
+
+#unitConversion h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#unit1,
+#unit2 {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+#Second {
+  margin: 5px 0;
+
+}
+
+.mohasebe {
+  width: 30%;
+  margin: 0 auto;
 }
 
 #unitConversion>div {
