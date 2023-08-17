@@ -256,37 +256,37 @@ function kmToMeter(e) {
 
     let unit = parseFloat(document.getElementById("unit").value);
     let meter = unit * 1000;
-    return meter
+    return `برابر با ${meter} است`
 }
 // فانکشن تبدیل کیلو گرم به سانتی متر
 function kmToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100000;
-    return cm
+    return `برابر با ${meter} است`
 }
 // فانکشن تبدیل  متر به سانتی متر
 function mToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100;
-    return cm
+    return `برابر با ${meter} است`
 }
 // فانکشن تبدیل  متر به کیلو متر
 function mToKm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit / 1000;
-    return km
+    return `برابر با ${meter} است`
 }
 //  فانکشن تبدیل  سانتی متر به متر
 function cmToMeter() {
     let unit = parseFloat(document.getElementById("unit").value);
     let meter = unit / 100;
-    return meter
+    return `برابر با ${meter} است`
 }
 //  فانکشن تبدیل  سانتی متر به کیلو متر
 function cmToKilometer() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit * 1000000;
-    return km
+    return `برابر با ${meter} است`
 }
 
 

@@ -258,7 +258,10 @@ form label {
 .user {
   text-align: center;
 }
-
+.leaghnt{
+  text-align: center;
+  margin-top: 10px;
+}
 /* ----------------------BMI section ensd------------------------------- */
 /* loading------------ */
 .loader {
