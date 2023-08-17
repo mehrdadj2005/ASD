@@ -1,8 +1,8 @@
-
 @font-face {
   font-family: persionFont;
   src: url(persionFont/Digi\ Rastin\ Plus\ Circle.ttf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -149,21 +149,23 @@ main {
 .rightDiv {
   width: 50%;
 }
-h1{
+
+h1 {
   text-align: center;
 }
+
 form {
   width: 50%;
   margin: 10px auto;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 150px;
+  padding: 20px;
   animation: formStart .5s linear forwards;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid #fff;
   color: #00ddff;
   /* From https://css.glass */
-  background: rgba(0, 242, 255, 0);
+  background: rgba(60, 245, 255, 0.065);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1.5px);
@@ -178,6 +180,10 @@ form {
   to {
     transform: translateX(0px);
   }
+}
+
+#clac input:last-of-type {
+  width: 48%;
 }
 
 form input[name="display"] {
@@ -200,22 +206,26 @@ form input[type="button"] {
   text-align: center;
   margin: 0 0 5px 5px;
 }
-form input[type="number"]{
+
+form input[type="number"] {
   width: 100%;
   margin-bottom: 10px;
 }
+
 form input[type="button"]:nth-last-of-type(1) {
   background-color: #28D319;
   color: #fff;
-  width: calc(50% - 7px);
+  width: 103%;
 }
-form input[type="submit"]{
+
+form input[type="submit"] {
   display: block;
-  width: 100%;
+  width: 101%;
   padding: 10px;
   background-color: #28D319;
   color: #fff;
 }
+
 form label {
   display: inline-block;
   margin: 10px;
@@ -227,7 +237,6 @@ form label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -258,10 +267,12 @@ form label {
 .user {
   text-align: center;
 }
-.leaghnt{
+
+.leaghnt {
   text-align: center;
   margin-top: 10px;
 }
+
 /* ----------------------BMI section ensd------------------------------- */
 /* loading------------ */
 .loader {
@@ -434,7 +445,6 @@ li {
 }
 
 #unitConversion {
-  width: 40%;
   display: none;
   text-align: center;
 }
@@ -455,8 +465,10 @@ li {
 
 }
 
-.mohasebe {
-  width: 30%;
+#mohasebe,
+.mohasebe1 {
+  float: none !important;
+  width: 101%;
   margin: 0 auto;
 }
 
@@ -469,6 +481,7 @@ li {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  align-items: center;
 }
 
 /* در ابتدا دیسپلی هدر و مین را تغییر میدهیم تا لودینگ به نمکایش در بیاید */
@@ -479,6 +492,15 @@ header {
 
 #unitForm {
   display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#unitForm>div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {

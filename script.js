@@ -7,6 +7,7 @@ const matn = [
 ]
 const pictiers = [
     "img/matnSVG/loin.svg",
+    "img/1302192-ffffff.svg"
 ]
 const mainPictiers = [
     "img/SVG/Lifestyle Illustrations_1.svg",
@@ -42,8 +43,8 @@ setTimeout(function () {
         main.style.display = "flex";
         header.style.display = "flex"
         showRandomLeftPictier();
-    }, 1000);
-}, 1000);
+    }, 6000);
+}, 3000);
 // فانکشن برای گرفتن رندم متن
 function getRandomMatn() {
     const random = Math.floor(Math.random() * matn.length);
@@ -104,7 +105,7 @@ function ConvertLengthUnits() {
         let y = document.querySelectorAll('body main  form')[i]
         y.style = 'display:none;'
     }
-    x.style = 'display:block;'
+    x.style = 'display:flex;'
 }
 
 function ConvertTimeUnits() {
@@ -195,11 +196,12 @@ function satuse(userStatus) {
 
 // ------------------تبدیل واحد----------------------
 const leanght = document.querySelector(".leaghnt")
-const unitForm = document.querySelector("#unitForm")
+const unitForm = document.querySelector(".mohasebe1")
 // فرم که سابمیت شد محسبه را شروع میکند
-unitForm.addEventListener("submit", convertToMeters)
+unitForm.addEventListener("click", convertToMeters)
 // فانکشن برای محاسبه
 function convertToMeters(e) {
+    console.log("asd");
     // مقدار داخل اینپوت را به عدد میگیرد
     let unit = parseFloat(document.getElementById("unit").value);
 
@@ -208,7 +210,7 @@ function convertToMeters(e) {
     // متغییر برای پیدا کردن واحد مقداری که میخوایم تبدیل بشه
     const unit02 = document.querySelector('#unit02').value
     // if (unitInput.value ===) {
-        
+
     // }
     // اگر مقداری که میخوایم تبدیل کنیم کیلوگرم باشه 
     if (unit01 == "kilometer") {
@@ -218,7 +220,7 @@ function convertToMeters(e) {
             // تگر مقداری که میخوایم تبدیل بشه سانتی متر باشه
         } else if (unit02 == "cm02") {
             console.log("km to cm");
-            leanght.innerHTML = kmToCm()
+            leanght.textContent = kmToCm()
             // کیلو متر
         } else if (unit02 == "kilometer02") {
             leanght.textContent = unit
@@ -262,19 +264,19 @@ function kmToMeter(e) {
 function kmToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100000;
-    return `برابر با ${meter} است`
+    return `برابر با ${cm} است`
 }
 // فانکشن تبدیل  متر به سانتی متر
 function mToCm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let cm = unit * 100;
-    return `برابر با ${meter} است`
+    return `برابر با ${cm} است`
 }
 // فانکشن تبدیل  متر به کیلو متر
 function mToKm() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit / 1000;
-    return `برابر با ${meter} است`
+    return `برابر با ${km} است`
 }
 //  فانکشن تبدیل  سانتی متر به متر
 function cmToMeter() {
@@ -286,32 +288,32 @@ function cmToMeter() {
 function cmToKilometer() {
     let unit = parseFloat(document.getElementById("unit").value);
     let km = unit * 1000000;
-    return `برابر با ${meter} است`
+    return `برابر با ${km} است`
 }
 
 
 let Second = document.querySelector('#Second')
 let minutes = document.querySelector('#minutes')
 let hour = document.querySelector('#hour')
-let unitConversion = document.querySelector('#unitConversion')
-let UnitList1 = document.querySelector('#ul1')
-let UnitList2 = document.querySelector('#ul2')
-let unit1 = document.querySelector('#unit1')
-let unit2 = document.querySelector('#unit2')
+let mohasebe = document.querySelector('#mohasebe')
+let unit1 = document.querySelector('#ul1')
+let unit2 = document.querySelector('#ul2')
+// let unit1 = document.querySelector('#unit1')
+// let unit2 = document.querySelector('#unit2')
 
 
-unitConversion.addEventListener('click', () => {
-
+mohasebe.addEventListener('click', (e) => {
     let khorji = document.querySelector('.khorji')
     let valueinput = Second.value
-    const unit01 = unit1.textContent;
-    const unit02 = unit2.textContent;
+    const unit01 = unit1.value;
+    const unit02 = unit2.value;
 
     if (unit01 == "ثانیه") {
         if (unit02 == "ثانیه") {
+            console.log("asd");
             khorji.textContent = valueinput
         } else if (unit02 == "دقیقه") {
-            khorji.innerHTML = sToM()
+            khorji.textContent = sToM()
         } else if (unit02 == "ساعت") {
             khorji.textContent = sToH()
         }
@@ -339,17 +341,15 @@ unitConversion.addEventListener('click', () => {
 //  فانکشن تبدیل ثانیه به دقیقه
 function sToM() {
     let unit = Second.value;
-        let a = (unit / 60).toFixed(7)
-        return a
-    
+    let a = (unit / 60).toFixed(2)
+    return a
 }
 
 //  فانکشن تبدیل ثانیه به ساعت
 function sToH() {
     let unit = Second.value;
-        let a = (unit / 3600).toFixed(7)
-        return a
-    
+    let a = (unit / 3600).toFixed(2)
+    return a
 }
 
 //  فانکشن تبدیل دقیقه به ثانیه
@@ -362,21 +362,21 @@ function mToS() {
 //  فانکشن تبدیل دقیقه به ساعت
 function mToH() {
     let unit = Second.value;
-        let a = (unit / 60).toFixed(7)
-        return a
-    
+    let a = (unit / 60).toFixed(2)
+    return a
+
 }
 
 //  فانکشن تبدیل ساعت به ثانیه
 function hTos() {
     let unit = Second.value;
-    let a = (unit * 3600).toFixed()
+    let a = (unit * 3600)
     return a
 }
 
 //  فانکشن تبدیل ساعت به دقیقه
 function hToM() {
     let unit = Second.value;
-    let a = (unit * 60).toFixed()
+    let a = (unit * 60)
     return a
 }

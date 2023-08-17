@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="icon" href="img/1302192-ffffff.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -79,7 +80,7 @@
 
             <!-- BMI calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <form name="good" method="get" id="bmiForm">
-                <h1> شاخص  توده بدنی </h1>
+                <h1> شاخص توده بدنی </h1>
                 <div id="change">
                     <h4>kg</h4>
                     <input type="number" class="weight" placeholder="50" value="">
@@ -90,7 +91,7 @@
                 </div>
 
 
-                <input type="button" value="✔" class="calculateBtn">
+                <input type="button" value="محاسبه" class="calculateBtn">
 
 
                 <div class="result"></div>
@@ -100,61 +101,60 @@
 
             <!-- unit conversion calculator start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
             <form name="good" id="unitForm">
-                <h1>  تبدیل واحد </h1>
-                <select name="unit02" id="unit02">
-                    <option value="kilometer02">کیلومتر</option>
-                    <option value="meter02">متر</option>
-                    <option value="cm02">سانتی متر</option>
-                </select>
-                <label for="unit02">:تبدیل به</label>
-                <select name="unit01" id="unit01">
-                    <option value="kilometer">کیلومتر</option>
-                    <option value="meter">متر</option>
-                    <option value="cm">سانتی متر</option>
-                </select>
-                <label for="unit01">:مقدار</label>
-                
+                <h1>واحد طول تبدیل کننده</h1>
+                <div>
+                    <select name="unit02" id="unit02">
+                        <option value="kilometer02">کیلومتر</option>
+                        <option value="meter02">متر</option>
+                        <option value="cm02">سانتی متر</option>
+                    </select>
+                    <label for="unit02">:تبدیل به</label>
+                    <select name="unit01" id="unit01">
+                        <option value="kilometer">کیلومتر</option>
+                        <option value="meter">متر</option>
+                        <option value="cm">سانتی متر</option>
+                    </select>
+                    <label for="unit01">:مقدار</label>
+
+                </div>
                 <input type="number" id="unit">
-                
-                <input type="submit" name="good" value="محاسبه" class="mohasebe">
-                
+
+                <input type="button" name="good" value="محاسبه" class="mohasebe1">
+
                 <div class="leaghnt"></div>
             </form>
             <!-- unit conversion calculator end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
-            
+
             <!-- time conversion start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
             <form name="unitConversion" id="unitConversion">
                 <div>
                     <input type="number" id="Second" value="">
                     <div>
-                        <ul id="ul1">
-                            <select>
-                                <option>انتخاب واحد</option>
-                                <option>ثانیه</option>
-                                <option>دقیقه</option>
-                                <option>ساعت</option>
-                            </select>
-                            <span>از</span>
-                        </ul>
-                        <ul id="ul2">
-                            <select>
-                                <option>انتخاب واحد</option>
-                                <option>ثانیه</option>
-                                <option>دقیقه</option>
-                                <option>ساعت</option>
-                            </select>
-                            <span>به</span>
-                        </ul>
+                        <label>: مقدار </label>
+                        <select id="ul1">
+                            <option>انتخاب واحد</option>
+                            <option>ثانیه</option>
+                            <option>دقیقه</option>
+                            <option>ساعت</option>
+                        </select>
+
+                        <label>: تبدیل به</label>
+                        <select id="ul2">
+                            <option>انتخاب واحد</option>
+                            <option>ثانیه</option>
+                            <option>دقیقه</option>
+                            <option>ساعت</option>
+                        </select>
                     </div>
                     <h1>تبدیل کننده واحد زمان</h1>
                 </div>
-                <input type="submit" name="unitConversion" value="محاسبه" class="mohasebe">
+                <input type="button" name="unitConversion" value="محاسبه" class="mohasebe" id="mohasebe">
                 <div class="khorji"></div>
             </form>
             <!-- time conversion end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
         </div>
-        
+
     </main>
     <!-- main end<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
