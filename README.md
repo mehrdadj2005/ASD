@@ -1,11 +1,11 @@
 # calculator
 ## contibutors
 
-- Mehrdad Jokari
+- **Mehrdad Jokari**
 > Email addres: **mehrdadjokari13@gmail.com**
 >
 > github page : **mehrdadj2005**
-- Farhad Ahmadi
+- **Farhad Ahmadi**
 > Email address : **farhad.13ahmadi.83@gmail.com**
 >
 > github page : **feri-punisher**
