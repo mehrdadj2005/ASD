@@ -504,8 +504,14 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  header>div:last-of-type{
+    
+    display: flex;
+    flex-wrap: wrap;
+  }
   header input {
     font-size: 7px;
+    width: 40%;
   }
 
   .leftDiv {
